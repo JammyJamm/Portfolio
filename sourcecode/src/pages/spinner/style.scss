@@ -1,0 +1,75 @@
+.ui-spinner{
+    .ui-line{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 9;
+        .line{
+            width: 1px;
+            height: 100px;
+            background-color: #f1f2f3;
+           animation: line 3s linear;
+        }
+    }
+   
+    .planFirst,
+    .planSecond{
+        width: 50%;
+    height: 100vh;
+    background-color: #283747;
+    position: absolute;
+    
+    }
+    .planFirst{
+        top: 0px;
+        left: 0px;
+        animation:planFirst 2s linear ;
+        animation-delay: 3s;
+    }
+    .planSecond{
+        right: 0px;
+        top: 0px;
+        animation:planFirst 2s linear ;
+        animation-delay: 3s;
+    }
+    @keyframes line {
+        0%{
+            height: 0px;
+        }
+        20%{
+            height: 100px;
+        }
+        30%{
+            height: 0px;
+        }
+        40%{
+            height: 100px;
+        }
+        50%{
+            height: 10px;
+        }
+       60%{
+            height: 100px;
+        }
+        70%{
+            height: 0px;
+        }
+       100%{
+            height: 100vh;
+        }
+    }
+    @keyframes planFirst {
+        0%{
+            width: 50%;
+           
+        }
+        100%{
+            width: 0%;
+         
+        }
+    }
+    
+}  
