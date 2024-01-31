@@ -1,0 +1,30 @@
+.ui-pointer {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  background-color: var(--secondary-color);
+  position: relative;
+  pointer-events: none;
+  transition: scale 0.4s ease-in;
+  .ui-slowPointer {
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    border: 2px solid var(--secondary-color);
+    pointer-events: none;
+  }
+}
+
+main {
+  pointer-events: none;
+  button,
+  a {
+    pointer-events: auto;
+  }
+}
+main:hover ~ .ui-pointer {
+  scale: 12;
+  background-color: var(--secondary-color);
+  opacity: 0.5;
+  transition: scale 0.5s ease-in;
+}

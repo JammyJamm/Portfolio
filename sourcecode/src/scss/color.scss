@@ -1,0 +1,8 @@
+.ui-layout {
+  --primary-color: #1abc9c;
+  --secondary-color: #f5cba7;
+  --text-color: #ffffff;
+}
+.ui-layout[data-theme="dark-theme"] {
+  --primary-color: #03211b;
+}
