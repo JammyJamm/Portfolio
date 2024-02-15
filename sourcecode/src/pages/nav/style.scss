@@ -18,14 +18,35 @@
     background-color: transparent;
     border: 1px solid var(--secondary-color);
     border-radius: 4px;
+    // li {
+    //   list-style: none;
+    //   padding: 2px;
+    //   a {
+    //     width: auto;
+    //     background-color: var(--secondary-color);
+    //     padding: 12px;
+    //     border-radius: 4px;
+    //     margin: 0px;
+    //   }
+    // }
     li {
       list-style: none;
-      padding: 2px;
       a {
-        background-color: var(--secondary-color);
-        padding: 12px;
-        border-radius: 4px;
+        width: auto;
+        background-color: transparent;
         margin: 0px;
+        button {
+          display: flex;
+          flex-direction: row-reverse;
+          img {
+            margin: 0px 10px 0px 0px;
+          }
+        }
+      }
+      &:last-child {
+        a button {
+          margin: 0px;
+        }
       }
     }
   }
