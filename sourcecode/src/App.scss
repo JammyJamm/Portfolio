@@ -17,6 +17,7 @@
 
 main {
   pointer-events: none;
+
   button,
   a {
     pointer-events: auto;
@@ -25,6 +26,6 @@ main {
 main:hover ~ .ui-pointer {
   scale: 12;
   background-color: var(--secondary-color);
-  opacity: 0.5;
+  opacity: 0.6;
   transition: scale 0.5s ease-in;
 }

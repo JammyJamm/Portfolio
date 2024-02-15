@@ -27,6 +27,7 @@ function App() {
     setPosY(window.e.clientY);
     console.log(window);
   }
+
   return (
     <div className="ui-layout" onMouseMove={showCoords}>
       <Nav />
