@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import home from "../assert/home.svg";
+import home from "../assert/arrow.svg";
+import Available from "../available/index";
 const Layout = () => {
   return (
     <div className="ui-page">
@@ -9,7 +10,23 @@ const Layout = () => {
             <Link to="/">
               <button class="primary-btn-icon">
                 Home
-                <img src="/static/media/home.50f8698bd0f2a46b0bb3ad09a89f37e8.svg" />
+                <img src={home} />
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">
+              <button class="primary-btn-icon">
+                About
+                <img src={home} />
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/experience">
+              <button class="primary-btn-icon">
+                Experience
+                <img src={home} />
               </button>
             </Link>
           </li>
@@ -17,21 +34,22 @@ const Layout = () => {
             <Link to="/contact">
               <button class="primary-btn-icon">
                 Contact
-                <img src="/static/media/home.50f8698bd0f2a46b0bb3ad09a89f37e8.svg" />
+                <img src={home} />
               </button>
             </Link>
           </li>
           <li>
-            <Link to="/contact">
+            <Link to="/fmr">
               <button class="primary-btn-icon">
-                Contact
-                <img src="/static/media/home.50f8698bd0f2a46b0bb3ad09a89f37e8.svg" />
+                FMR
+                <img src={home} />
               </button>
             </Link>
           </li>
         </ul>
       </div>
       <Outlet />
+      <Available />
     </div>
   );
 };

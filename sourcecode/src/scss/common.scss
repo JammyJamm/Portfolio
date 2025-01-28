@@ -57,6 +57,7 @@ button {
   display: flex;
   align-items: center;
   &.primary-btn {
+    color: var(--light-gray);
     background-color: var(--secondary-color);
     transition: all 0.6s ease-in;
     &:hover {
