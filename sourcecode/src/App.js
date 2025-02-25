@@ -6,6 +6,8 @@ import Nav from "./pages/nav/Index";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import HomePage from "./pages/home/Index";
 import { useState } from "react";
+
+import Theme from "./pages/theme";
 function App() {
   const [posX, setPosX] = useState("");
   const [posY, setPosY] = useState("");
@@ -31,6 +33,7 @@ function App() {
 
   return (
     <div className="ui-layout" onMouseMove={showCoords}>
+      <Theme />
       <Nav />
       <div
         className="ui-pointer"

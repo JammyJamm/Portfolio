@@ -1,12 +1,13 @@
 // Nav style starts //
 .ui-nav {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   position: fixed;
   bottom: 0px;
   left: 0px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
   ul {
     width: auto;
@@ -15,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: transparent;
     border: 1px solid var(--secondary-color);
     border-radius: 4px;

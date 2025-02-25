@@ -38,11 +38,33 @@ code {
   &.hori_center {
     align-items: center;
   }
+  &.verti_center {
+    justify-content: center;
+  }
   .col-6 {
     width: 50%;
   }
+  .col-4 {
+    width: 33.333%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-2 {
+    width: 20%;
+  }
 }
-
+.text {
+  h3 {
+    font-size: 48px;
+    margin-bottom: 18px;
+  }
+  p {
+    font-weight: 300;
+    line-height: 32px;
+    color: hsla(0, 0%, 100%, 0.7);
+  }
+}
 // Button Style starts //
 .btn-group {
   display: flex;
@@ -91,7 +113,7 @@ button {
       content: "";
       width: 0%;
       height: 0.5px;
-      background-color: var(--button-hover);
+      background-color: var(--text-color);
       position: absolute;
       bottom: 12px;
       right: 10%;
@@ -109,17 +131,25 @@ a {
   width: 50px;
   height: 50px;
   background-color: var(--light-gray);
+  color: var(--button-hover);
   border-radius: 50%;
   margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.6s ease-in;
+  &::after {
+    border-color: var(--light-gray);
+  }
   &:hover {
     transition: all 0.6s ease-in;
     background-color: var(--button-hover);
+    color: var(--light-gray);
     svg path {
-      fill: var(--light-gray);
+      fill: var(--light-gray) !important;
+    }
+    &::after {
+      border-color: var(--button-hover);
     }
   }
 }

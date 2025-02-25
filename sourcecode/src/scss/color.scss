@@ -1,10 +1,30 @@
-.ui-layout {
+:root {
+  --green: #1abc9c;
+  --face: #f5cba7;
+  --black: #000000;
+  --white: #ffffff;
+}
+body {
   --primary-color: #1abc9c;
   --secondary-color: #f5cba7;
   --text-color: #ffffff;
+  --button: #f5cba7;
   --button-hover: #000000;
   --light-gray: #f6f6f6;
 }
-.ui-layout[data-theme="dark-theme"] {
+body.greenFace {
+  --primary-color: #1abc9c;
+  --secondary-color: #f5cba7;
+  --text-color: #ffffff;
+  --button: #f5cba7;
+  --button-hover: #000000;
+  --light-gray: #f6f6f6;
+}
+body.blackWhite {
   --primary-color: #03211b;
+  --secondary-color: #ffffff;
+  --text-color: #ffffff;
+  --button: #f5cba7;
+  --button-hover: #787878;
+  --light-gray: #f6f6f6;
 }

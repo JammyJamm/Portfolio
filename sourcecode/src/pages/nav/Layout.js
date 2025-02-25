@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import home from "../assert/arrow.svg";
+import home from "../assert/home.svg";
+import contact from "../assert/message.svg";
 import Available from "../available/index";
 const Layout = () => {
   return (
@@ -9,7 +10,7 @@ const Layout = () => {
           <li>
             <Link to="/">
               <button class="primary-btn-icon">
-                Home
+                {/* Home */}
                 <img src={home} />
               </button>
             </Link>
@@ -17,7 +18,7 @@ const Layout = () => {
           <li>
             <Link to="/about">
               <button class="primary-btn-icon">
-                About
+                {/* About */}
                 <img src={home} />
               </button>
             </Link>
@@ -25,7 +26,7 @@ const Layout = () => {
           <li>
             <Link to="/experience">
               <button class="primary-btn-icon">
-                Experience
+                {/* Experience */}
                 <img src={home} />
               </button>
             </Link>
@@ -33,15 +34,15 @@ const Layout = () => {
           <li>
             <Link to="/contact">
               <button class="primary-btn-icon">
-                Contact
-                <img src={home} />
+                {/* Contact */}
+                <img src={contact} />
               </button>
             </Link>
           </li>
           <li>
             <Link to="/fmr">
               <button class="primary-btn-icon">
-                FMR
+                {/* FMR */}
                 <img src={home} />
               </button>
             </Link>

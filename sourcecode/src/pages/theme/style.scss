@@ -1,0 +1,81 @@
+.colorCode {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+.colorSelect {
+  padding: 15px 20px 15px 30px;
+  background-color: var(--text-color);
+  border-radius: 4px;
+  margin: 16px 6px 0px 0px;
+  font-family: font-medium;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-left: 0px solid transparent;
+    border-bottom: 16px solid var(--text-color);
+    position: absolute;
+    top: -14px;
+    left: 27px;
+  }
+
+  .colorSelect__item {
+    // width: 100%;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    &:hover {
+      .primary,
+      .secondary {
+        color: var(--button-hover);
+      }
+    }
+    .primary {
+      border-radius: 4px 0px 0px 4px;
+      background-color: var(--green);
+      &::after {
+        display: block;
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 55px solid transparent;
+        border-bottom: 0px solid transparent;
+        border-right: 18px solid var(--face);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+    .secondary {
+      padding: 15px 20px 15px 10px;
+      border-radius: 0px 4px 4px 0px;
+      background-color: var(--face);
+    }
+    .primary,
+    .secondary {
+      color: var(--text-color);
+      padding: 15px 20px 15px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    .black {
+      background-color: var(--black);
+      &::after {
+        border-right: 18px solid var(--white);
+      }
+    }
+    .white {
+      background-color: var(--white);
+    }
+  }
+}

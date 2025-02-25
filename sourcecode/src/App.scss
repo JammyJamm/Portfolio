@@ -19,8 +19,13 @@ main {
   pointer-events: none;
 
   button,
-  a {
+  a,
+  input,
+  textArea {
     pointer-events: auto;
+  }
+  .form-element {
+    height: 76px;
   }
 }
 main:hover ~ .ui-pointer {
