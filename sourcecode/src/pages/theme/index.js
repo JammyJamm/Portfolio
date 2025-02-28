@@ -23,20 +23,20 @@ const Theme = () => {
         </a>
       </div>
       <div className="colorSelect">
-        <div
+        <a
           className="colorSelect__item"
           onClick={() => handleTheme("blackWhite")}
         >
           <div className="primary black">black</div>
           <div className="secondary white">white</div>
-        </div>
-        <div
+        </a>
+        <a
           className="colorSelect__item"
           onClick={() => handleTheme("greenFace")}
         >
           <div className="primary">Green</div>
           <div className="secondary">Face</div>
-        </div>
+        </a>
       </div>
     </div>
   );

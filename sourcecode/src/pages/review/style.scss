@@ -1,0 +1,19 @@
+.ui-layout:has(div.ui-review) {
+  background-color: var(--light-gray);
+}
+.ui-review {
+  .experience {
+    padding: 75px;
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: var(----white);
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

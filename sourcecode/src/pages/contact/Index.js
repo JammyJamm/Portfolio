@@ -3,10 +3,10 @@ import "./style.scss";
 import { ReactComponent as Behance } from "../assert/behance.svg";
 import FollowMe from "../home/FollowMe";
 const Contact = () => {
-  const name = "Senthamil M";
+  const name = "Senthamil Munusamy";
   console.log(name);
   const rotateName = name.split("").map((char, i) => {
-    const rotationValue = i * 30 - 3;
+    const rotationValue = i * 19 - 3;
     return (
       <span
         style={{
@@ -31,7 +31,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="col-6 box-contact text">
-              <h3>Let's work together</h3>
+              <h1>Let's work together</h1>
               <p>
                 You can express yourself however you want and whenever you want,
                 for free. You can customize a template or make your own.
@@ -39,7 +39,7 @@ const Contact = () => {
             </div>
             <div className="col-3 col verti_center hori_center">
               <div className="box">
-                <button class="primary-btn-icon">Say Hello </button>
+                <button className="btn-secondary">Say Hello </button>
               </div>
             </div>
           </div>

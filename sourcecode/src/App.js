@@ -6,8 +6,10 @@ import Nav from "./pages/nav/Index";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import HomePage from "./pages/home/Index";
 import { useState } from "react";
+import { ReactComponent as Logo } from "../src/pages/assert/logo.svg";
 
 import Theme from "./pages/theme";
+import LogoImg from "./pages/logo";
 function App() {
   const [posX, setPosX] = useState("");
   const [posY, setPosY] = useState("");
@@ -35,6 +37,7 @@ function App() {
     <div className="ui-layout" onMouseMove={showCoords}>
       <Theme />
       <Nav />
+      <LogoImg />
       <div
         className="ui-pointer"
         style={{ position: "absolute", top: posY, left: posX }}

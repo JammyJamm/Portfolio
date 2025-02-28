@@ -2,10 +2,14 @@
   position: fixed;
   right: 20px;
   top: 20px;
+  .colorCode__item {
+    display: flex;
+    justify-content: end;
+  }
 }
 .colorSelect {
   padding: 15px 20px 15px 30px;
-  background-color: var(--text-color);
+  background-color: var(--light-gray);
   border-radius: 4px;
   margin: 16px 6px 0px 0px;
   font-family: font-medium;
@@ -19,12 +23,12 @@
     content: "";
     width: 0;
     height: 0;
-    border-right: 10px solid transparent;
-    border-left: 0px solid transparent;
-    border-bottom: 16px solid var(--text-color);
+    border-left: 10px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 16px solid var(--light-gray);
     position: absolute;
     top: -14px;
-    left: 27px;
+    right: 27px;
   }
 
   .colorSelect__item {

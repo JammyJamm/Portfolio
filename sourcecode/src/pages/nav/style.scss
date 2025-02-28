@@ -4,7 +4,7 @@
   height: 100%;
   position: fixed;
   bottom: 0px;
-  left: 0px;
+  left: 6px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -18,35 +18,26 @@
     justify-content: center;
     flex-direction: column;
     background-color: transparent;
-    border: 1px solid var(--secondary-color);
-    border-radius: 4px;
-    // li {
-    //   list-style: none;
-    //   padding: 2px;
-    //   a {
-    //     width: auto;
-    //     background-color: var(--secondary-color);
-    //     padding: 12px;
-    //     border-radius: 4px;
-    //     margin: 0px;
-    //   }
-    // }
+    //border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    // background-color: #fff;
+    padding: 6px 6px;
     li {
       list-style: none;
       a {
-        width: auto;
-        background-color: transparent;
-        margin: 0px;
-        button {
-          display: flex;
-          flex-direction: row-reverse;
-          img {
-            margin: 0px 10px 0px 0px;
-          }
+        // width: auto;
+        // background-color: transparent;
+        margin: 0px 0px 16px 0px;
+        &.active {
+          background-color: var(--tri-color);
+        }
+        svg {
+          width: 20px;
         }
       }
       &:last-child {
-        a button {
+        a {
           margin: 0px;
         }
       }

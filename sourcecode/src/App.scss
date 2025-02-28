@@ -2,7 +2,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50px;
-  background-color: var(--secondary-color);
+  background-color: var(--tri-color);
   position: relative;
   pointer-events: none;
   transition: scale 0.4s ease-in;
@@ -10,7 +10,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50px;
-    border: 2px solid var(--secondary-color);
+    border: 3px solid var(--tri-color);
     pointer-events: none;
   }
 }
@@ -30,7 +30,7 @@ main {
 }
 main:hover ~ .ui-pointer {
   scale: 12;
-  background-color: var(--secondary-color);
+  background-color: var(--tri-color);
   opacity: 0.6;
   transition: scale 0.5s ease-in;
 }

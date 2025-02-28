@@ -41,6 +41,12 @@ code {
   &.verti_center {
     justify-content: center;
   }
+  .col-9 {
+    width: 75%;
+  }
+  .col-8 {
+    width: 66.666%;
+  }
   .col-6 {
     width: 50%;
   }
@@ -55,20 +61,25 @@ code {
   }
 }
 .text {
-  h3 {
-    font-size: 48px;
+  h1 {
+    font-size: 52px;
     margin-bottom: 18px;
   }
   p {
     font-weight: 300;
     line-height: 32px;
-    color: hsla(0, 0%, 100%, 0.7);
+    color: var(--text-color);
+    margin: 25px 0px 45px 0px;
   }
 }
 // Button Style starts //
 .btn-group {
   display: flex;
   align-items: center;
+  margin-bottom: 6px;
+  label {
+    margin-right: 16px;
+  }
 }
 button {
   border: 0px;
@@ -79,28 +90,37 @@ button {
   display: flex;
   align-items: center;
   &.primary-btn {
-    color: var(--light-gray);
-    background-color: var(--secondary-color);
+    color: var(--button-text);
+    background-color: var(--button-bg);
     transition: all 0.6s ease-in;
     &:hover {
-      background-color: var(--button-hover);
-      color: var(--text-color);
+      background-color: var(--button-bg-hover);
+      color: var(--button-text);
       transition: all 0.6s ease-in;
     }
   }
   &.primary-btn-icon {
     padding: 15px 20px 15px 30px;
-    background-color: var(--secondary-color);
+    color: var(--button-text);
+    background-color: var(--button-bg);
     transition: all 0.6s ease-in;
-    img {
+    svg {
       margin-left: 6px;
       width: 22px;
       height: auto;
+      path {
+        fill: var(--button-text) !important;
+      }
     }
     &:hover {
-      background-color: var(--button-hover);
-      color: var(--text-color);
+      background-color: var(--button-bg-hover);
+      color: var(--button-text-hover);
       transition: all 0.6s ease-in;
+      svg {
+        path {
+          fill: var(--button-text-hover) !important;
+        }
+      }
     }
   }
   &.secondary-btn {
@@ -113,7 +133,7 @@ button {
       content: "";
       width: 0%;
       height: 0.5px;
-      background-color: var(--text-color);
+      background-color: var(--text);
       position: absolute;
       bottom: 12px;
       right: 10%;
@@ -131,7 +151,7 @@ a {
   width: 50px;
   height: 50px;
   background-color: var(--light-gray);
-  color: var(--button-hover);
+  color: var(--button-bg-hover);
   border-radius: 50%;
   margin-right: 10px;
   display: flex;
@@ -143,8 +163,8 @@ a {
   }
   &:hover {
     transition: all 0.6s ease-in;
-    background-color: var(--button-hover);
-    color: var(--light-gray);
+    background-color: var(--button-bg-hover);
+    color: var(--button-text-hover);
     svg path {
       fill: var(--light-gray) !important;
     }

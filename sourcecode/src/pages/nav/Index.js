@@ -7,6 +7,7 @@ import NoPage from "../noPage/Index";
 import FMR from "../FMR/Index";
 import Layout from "./Layout";
 import "./style.scss";
+import Review from "../review";
 const Nav = () => {
   return (
     <main>
@@ -17,7 +18,7 @@ const Nav = () => {
             <Route path="about" element={<About />} />
             <Route path="experience" element={<Experience />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="fmr" element={<FMR />} />
+            <Route path="review" element={<Review />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

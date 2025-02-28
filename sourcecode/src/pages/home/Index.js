@@ -1,20 +1,21 @@
 import heroimg from "../assert/home.svg";
 import arrowImg from "../assert/arrow.svg";
 import FollowMe from "./FollowMe";
+import { ReactComponent as Icon } from "../assert/contact.svg";
 const HomePage = () => {
   return (
     <div className="container-fluid ui-homepage green">
       <div className="col hori_center">
-        <div className="col-6">
-          <h1>I have a Creative Idea to grow up your business</h1>
+        <div className="col-6 text">
+          <h1>Senthamil Munusamy</h1>
           <p>
-            Wherther you hvae already have a website or you are geting started.
-            Learn to build from me.
+            I'm creative designer based in Bangalore, and I'm very passionate
+            and dedicated to my work.
           </p>
           <div className="btn-group">
             <button className="primary-btn-icon">
-              Get Start Now
-              <img src={heroimg} />
+              Say Hello
+              <Icon width="26px" height="26px" />
             </button>
             <button className="secondary-btn">
               Watch Video
