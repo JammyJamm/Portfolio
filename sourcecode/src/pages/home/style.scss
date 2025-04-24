@@ -1,0 +1,17 @@
+.job {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: var(--black);
+    margin-right: 16px;
+  }
+}
+p.jobDescription {
+  font-size: 16px;
+  //   color: #5a5a5a;
+}

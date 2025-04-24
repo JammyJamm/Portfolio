@@ -32,7 +32,8 @@
 }
 
 .ui-layout:has(div.ui-about) {
-  --text-color: #fff;
+  // --text-color: rgb(255, 255, 255);
+  --text-color: rgb(255, 255, 255, 0.7);
 }
 // .ui-layout {
 //   --secondary-color: red;
@@ -58,6 +59,9 @@
   align-items: center;
 }
 .text {
+  h1 {
+    color: var(--primary-color);
+  }
   .signature svg {
     path {
       fill: var(--primary-color);

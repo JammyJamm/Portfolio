@@ -19,7 +19,7 @@
     flex-direction: column;
     background-color: transparent;
     //border: 1px solid var(--secondary-color);
-    background-color: var(--secondary-color);
+    background-color: var(--nav-bg);
     border-radius: 50px;
     // background-color: #fff;
     padding: 6px 6px;
@@ -30,7 +30,7 @@
         // background-color: transparent;
         margin: 0px 0px 16px 0px;
         &.active {
-          background-color: var(--tri-color);
+          background-color: var(--nav-bg-active);
         }
         svg {
           width: 20px;

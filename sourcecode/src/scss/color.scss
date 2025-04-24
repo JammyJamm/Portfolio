@@ -5,30 +5,57 @@
   --white: #ffffff;
 }
 body {
-  --primary-color: #ffffff;
-  --secondary-color: #6244c5;
-  --tri-color: #ffc448;
-  --text: #12141d;
-  --text-hover: #ffffff;
-  --button-text: #ffffff;
-  --button-text-hover: #ffffff;
-  --button-bg: #6244c5;
-  --button-bg-hover: #000000;
-  --light-gray: #f6f6f6;
+  // ******* //
+  --bg-color: #ffffff;
+  // Button color code
+  --btn-pri-blue: #6244c5;
+  --btn--pri-hover-black: #000000;
+  --btn-pri-text-white: #ffffff;
+  --btn-pri-text-hover-white: #ffffff;
+  --btn-sec-blue: transparent;
+  --btn-tri-gray: #f6f6f6;
+  --btn-tri-hover-blue: #000000;
+  // Icon color
+  --btn-icon-color: #f6f6f6;
+  --btn-icon-text-color: #000000;
+  --btn-icon-hover-color: #000000;
+  --btn-icon-text-hover-color: #f6f6f6;
+
+  // Text color code
+  --text-color: rgb(18, 20, 29);
+  --text-color-opacity: rgb(18, 20, 29, 0.7);
+  // Cursor color code
+  --cursor-yellow: #ffc448;
+  // Nav color
+  --nav-bg: #6244c5;
+  --nav-bg-active: #ffc448;
+  // ******** //
+  // --primary-color: rgb(18, 20, 29);
+  // --secondary-color: #6244c5;
+  // --tri-color: #ffc448;
+  // --text: #12141d;
+  // //--text-color: rgb(255, 255, 255, 0.7);
+  // --text-color: rgb(18, 20, 29);
+  // --text-hover: #ffffff;
+  // --button-text: #ffffff;
+  // --button-text-hover: #ffffff;
+  // --button-bg: #6244c5;
+  // --button-bg-hover: #000000;
+  // --light-gray: #f6f6f6;
 }
 body.greenFace {
-  --primary-color: #1abc9c;
-  --secondary-color: #f5cba7;
-  --text-color: #ffffff;
-  --button: #f5cba7;
-  --button-hover: #000000;
-  --light-gray: #f6f6f6;
+  // --primary-color: #1abc9c;
+  // --secondary-color: #f5cba7;
+  // --text-color: #ffffff;
+  // --button: #f5cba7;
+  // --button-hover: #000000;
+  // --light-gray: #f6f6f6;
 }
 body.blackWhite {
-  --primary-color: #03211b;
-  --secondary-color: #ffffff;
-  --text-color: #ffffff;
-  --button: #f5cba7;
-  --button-hover: #787878;
-  --light-gray: #f6f6f6;
+  // --primary-color: #03211b;
+  // --secondary-color: #ffffff;
+  // --text-color: #ffffff;
+  // --button: #f5cba7;
+  // --button-hover: #787878;
+  // --light-gray: #f6f6f6;
 }

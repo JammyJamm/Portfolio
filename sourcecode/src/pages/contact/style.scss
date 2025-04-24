@@ -1,56 +1,85 @@
 .ui-layout:has(div.ui-contact) {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
+  background-color: var(--text);
+  color: rgb(255, 255, 255);
 }
-.circleText {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: var(--tri-color);
+.ui-contact {
+  svg {
+    // width: 36px;
+    // height: 36px;
+    path {
+      width: 36px;
+      height: 36px;
+      fill: #fff;
+    }
+  }
 
-  position: relative;
-  padding: 15px;
-  animation: rotate 10s linear infinite;
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(180deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  p {
+  .circleText {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--tri-color);
+
     position: relative;
-    margin-top: 0;
-    padding: 25px;
-    span {
-      position: absolute;
-      left: 50%;
-      font-size: 14px;
-      transform-origin: 0 60px;
-      scale: 1.2;
-      color: var(--secondary-color);
-      font-weight: bold;
+    padding: 15px;
+    animation: rotate 10s linear infinite;
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    p {
+      position: relative;
+      margin-top: 0;
+      padding: 25px;
+      span {
+        position: absolute;
+        left: 50%;
+        font-size: 14px;
+        transform-origin: 0 60px;
+        scale: 1.2;
+        color: var(--secondary-color);
+        font-weight: bold;
+      }
     }
   }
-}
-.mainLayout {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .bottomText {
-    label {
-      padding: 15px 20px 15px 30px;
-      font-size: 14px;
-      opacity: 0.5;
+  .mainLayout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .bottomText {
+      label {
+        padding: 15px 20px 15px 30px;
+        font-size: 14px;
+        opacity: 0.5;
+      }
+      button {
+        font-size: 24px;
+        pointer-events: auto;
+        color: #fff;
+      }
     }
-    button {
-      font-size: 24px;
-      pointer-events: auto;
-      color: var(--text-color);
+    .box-contact {
+      h1 {
+        font-size: 48px;
+        margin-bottom: 18px;
+      }
+      p {
+        font-weight: 300;
+        line-height: 32px;
+        color: hsla(0, 0%, 100%, 0.7);
+      }
+      label {
+        display: block;
+        color: hsla(0, 0%, 100%, 0.5);
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
     }
   }
 }

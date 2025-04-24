@@ -12,12 +12,12 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-color);
+  background-color: var(--bg-color);
   overflow-x: hidden;
   overflow-y: hidden;
 }
 .ui-layout {
-  background-color: var(--primary-color);
+  background-color: --bg-color;
   color: var(--text-color);
 }
 code {
@@ -87,38 +87,42 @@ button {
   border-radius: 4px;
   margin-right: 6px;
   font-family: font-medium;
+  // font-weight: 700;
+  white-space: nowrap;
+  word-wrap: break-word;
+  font-size: 16px;
   display: flex;
   align-items: center;
   &.primary-btn {
-    color: var(--button-text);
-    background-color: var(--button-bg);
+    color: var(--btn-pri-text-white);
+    background-color: var(--btn-pri-blue);
     transition: all 0.6s ease-in;
     &:hover {
-      background-color: var(--button-bg-hover);
-      color: var(--button-text);
+      background-color: var(--btn--pri-hover-black);
+      color: var(--btn-pri-text-hover-white);
       transition: all 0.6s ease-in;
     }
   }
   &.primary-btn-icon {
     padding: 15px 20px 15px 30px;
-    color: var(--button-text);
-    background-color: var(--button-bg);
+    color: var(--btn-pri-text-white);
+    background-color: var(--btn-pri-blue);
     transition: all 0.6s ease-in;
     svg {
       margin-left: 6px;
       width: 22px;
       height: auto;
       path {
-        fill: var(--button-text) !important;
+        fill: var(--btn-pri-text-white) !important;
       }
     }
     &:hover {
-      background-color: var(--button-bg-hover);
-      color: var(--button-text-hover);
+      background-color: var(--btn--pri-hover-black);
+      color: var(--btn-pri-text-hover-white);
       transition: all 0.6s ease-in;
       svg {
         path {
-          fill: var(--button-text-hover) !important;
+          fill: var(--btn-pri-text-hover-white) !important;
         }
       }
     }
@@ -126,14 +130,14 @@ button {
   &.secondary-btn {
     position: relative;
     padding: 15px 20px 15px 30px;
-    background-color: transparent;
+    background-color: var(--btn-sec-blue);
 
     &::after {
       display: block;
       content: "";
       width: 0%;
       height: 0.5px;
-      background-color: var(--text);
+      background-color: var(--btn-tri-hover-blue);
       position: absolute;
       bottom: 12px;
       right: 10%;
@@ -150,8 +154,8 @@ button {
 a {
   width: 50px;
   height: 50px;
-  background-color: var(--light-gray);
-  color: var(--button-bg-hover);
+  background-color: var(--btn-icon-color);
+  color: var(--btn-icon-text-color);
   border-radius: 50%;
   margin-right: 10px;
   display: flex;
@@ -159,17 +163,17 @@ a {
   justify-content: center;
   transition: all 0.6s ease-in;
   &::after {
-    border-color: var(--light-gray);
+    border-color: var(--btn-icon-color);
   }
   &:hover {
     transition: all 0.6s ease-in;
-    background-color: var(--button-bg-hover);
-    color: var(--button-text-hover);
+    background-color: var(--btn-icon-hover-color);
+    color: var(--btn-icon-text-hover-color);
     svg path {
-      fill: var(--light-gray) !important;
+      fill: var(--btn-icon-color) !important;
     }
     &::after {
-      border-color: var(--button-hover);
+      border-color: var(--btn-icon-text-hover-color);
     }
   }
 }

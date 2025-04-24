@@ -1,6 +1,7 @@
 import heroimg from "../assert/home.svg";
 import arrowImg from "../assert/arrow.svg";
 import FollowMe from "./FollowMe";
+import "./style.scss";
 import { ReactComponent as Icon } from "../assert/contact.svg";
 const HomePage = () => {
   return (
@@ -8,7 +9,8 @@ const HomePage = () => {
       <div className="col hori_center">
         <div className="col-6 text">
           <h1>Senthamil Munusamy</h1>
-          <p>
+          <label className="job">UX Designer & UI Developer </label>
+          <p className="jobDescription">
             I'm creative designer based in Bangalore, and I'm very passionate
             and dedicated to my work.
           </p>

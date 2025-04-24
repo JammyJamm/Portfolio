@@ -10,6 +10,7 @@ import { ReactComponent as Logo } from "../src/pages/assert/logo.svg";
 
 import Theme from "./pages/theme";
 import LogoImg from "./pages/logo";
+import LandingAnimation from "./pages/landingAnimation";
 function App() {
   const [posX, setPosX] = useState("");
   const [posY, setPosY] = useState("");
@@ -32,9 +33,14 @@ function App() {
     setPosY(window.e.clientY);
     console.log(window);
   }
-
+  // Amination Time out
+  const [animate, setAnimate] = useState(true);
+  setTimeout(() => {
+    setAnimate(false);
+  }, 3000);
   return (
     <div className="ui-layout" onMouseMove={showCoords}>
+      {animate ? <LandingAnimation /> : ""}
       <Theme />
       <Nav />
       <LogoImg />

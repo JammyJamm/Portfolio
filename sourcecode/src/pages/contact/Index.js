@@ -2,6 +2,9 @@ import "./style.scss";
 // import behance from "../assert/behance.svg";
 import { ReactComponent as Behance } from "../assert/behance.svg";
 import FollowMe from "../home/FollowMe";
+import { ReactComponent as ContactUS } from "../assert/contact-us.svg";
+import { ReactComponent as Virtual } from "../assert/virtual-assistants.svg";
+import { ReactComponent as Phone } from "../assert/smartphone.svg";
 const Contact = () => {
   const name = "Senthamil Munusamy";
   console.log(name);
@@ -20,6 +23,9 @@ const Contact = () => {
 
   return (
     <div className="ui-contact">
+      <ContactUS style={{ width: "40px", height: "auto" }} />
+      <Phone style={{ width: "40px", height: "auto" }} />
+      <Virtual style={{ width: "40px", height: "auto" }} />
       <div className="container-fluid ">
         <div className="mainLayout">
           <div className="col hori_center">
@@ -30,7 +36,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="col-6 box-contact text">
+            <div className="col-6 box-contact">
               <h1>Let's work together</h1>
               <p>
                 You can express yourself however you want and whenever you want,
@@ -47,13 +53,13 @@ const Contact = () => {
             <div className="col-4">
               <div className="box">
                 <label>Call :</label>
-                <button class="secondary-btn">+91 7010314568</button>
+                <button className="secondary-btn">+91 7010314568</button>
               </div>
             </div>
             <div className="col-4">
               <div className="box">
                 <label>Email :</label>
-                <button class="secondary-btn">tamiltanish@gmail.com</button>
+                <button className="secondary-btn">tamiltanish@gmail.com</button>
               </div>
             </div>
             <div className="col-4">

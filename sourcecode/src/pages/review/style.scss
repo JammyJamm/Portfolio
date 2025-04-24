@@ -2,6 +2,16 @@
   background-color: var(--light-gray);
 }
 .ui-review {
+  background-color: var(--light-gray);
+
+  .hori_center {
+    display: none;
+    // animation: slideOut 2s linear;
+    &.active {
+      display: flex;
+      // animation: slideIn 2s linear;
+    }
+  }
   .experience {
     padding: 75px;
     .box {
@@ -15,5 +25,16 @@
         height: auto;
       }
     }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(200%);
+    display: flex;
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }

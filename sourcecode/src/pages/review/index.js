@@ -1,7 +1,9 @@
 import "./style.scss";
-import Review1 from "../assert/senthamil.jpg";
-import Review2 from "../assert/senthamil.jpg";
+import { ReactComponent as Waymo } from "../assert/waymo.svg";
+import { useEffect, useState } from "react";
 const Review = () => {
+  const [isActive, setIsActive] = useState("Arun Praveen");
+
   const reviewData = [
     {
       name: "Arun Praveen",
@@ -11,7 +13,8 @@ const Review = () => {
                 very successful creating my profile using designer which gave me
                 unbelievable reach & appreciation.”`,
       company: "Creative Synergies Group",
-      imageURL: { Review1 },
+      imageURL:
+        "https://github.com/JammyJamm/Portfolio/blob/main/sourcecode/src/pages/assert/senthamil.jpg?raw=true",
     },
     {
       name: "Dinesh Pandian",
@@ -21,10 +24,20 @@ const Review = () => {
               very successful creating my profile using designer which gave me
               unbelievable reach & appreciation.”`,
       company: "Creative Synergies Group",
-      imageURL: { Review2 },
+      imageURL:
+        "https://github.com/JammyJamm/Portfolio/blob/main/sourcecode/src/pages/assert/senthamil.jpg?raw=true",
     },
   ];
-
+  // Carosel Code
+  // useEffect(() => {
+  //   let timmer = 0;
+  //   setInterval(() => {
+  //     console.log(reviewData[timmer].name);
+  //     if (timmer != reviewData.length - 1) timmer++;
+  //     else timmer = 0;
+  //     setIsActive(reviewData[timmer].name);
+  //   }, 6000);
+  // }, []);
   return (
     <div className="ui-review ">
       <div className="container-fluid ">
@@ -35,24 +48,26 @@ const Review = () => {
           <div className="box col-6 text">
             <h1>Valuable feedback from my Managers</h1>
           </div>
+
           {reviewData.map((data) => {
-            {
-              console.log(data.imageURL.Review1);
-            }
             return (
               <div
                 key={data.name}
-                className="col hori_center"
+                className={
+                  isActive == data.name
+                    ? "col hori_center active"
+                    : "col hori_center"
+                }
                 style={{ flexDirection: "row", height: "auto" }}
               >
                 <div className="col-4 experience">
                   <div className="box text">
-                    <img src={Review1} alt="" />
+                    <img src={data.imageURL} alt="" />
                   </div>
                 </div>
                 <div className="col-8 text">
                   {/* <h3>Waymo</h3>*/}
-                  <p>{data.review.Review1}</p>
+                  <p>{data.review}</p>
                   <label>-- {data.name}</label>
                   <br></br>
                   <span>{data.company}</span>
@@ -60,6 +75,9 @@ const Review = () => {
               </div>
             );
           })}
+          <div className="year">
+            <Waymo />
+          </div>
         </div>
       </div>
     </div>
