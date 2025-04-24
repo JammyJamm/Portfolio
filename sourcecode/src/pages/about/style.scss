@@ -1,20 +1,25 @@
+.ui-layout:has(div.ui-about) {
+  // --text-color: rgb(255, 255, 255);
+  --text-color: rgb(255, 255, 255);
+}
+
 .ui-about {
   width: 100%;
   height: 100vh;
-  background-color: var(--secondary-color);
+  background-color: var(--blue);
 
   .box {
-    background-color: var(--tri-color);
+    background-color: var(--yellow);
     display: inline-block;
     border-radius: 4px;
-    color: var(--secondary-color);
+    color: var(--blue);
     position: relative;
     b {
       font-size: 330px;
       position: relative;
       top: -38px;
       right: -34px;
-      // color: var(--secondary-color);
+      // color: var(--blue);
     }
     label {
       width: 100%;
@@ -29,18 +34,7 @@
     //   color: var(--text-color);
     // }
   }
-}
 
-.ui-layout:has(div.ui-about) {
-  // --text-color: rgb(255, 255, 255);
-  --text-color: rgb(255, 255, 255, 0.7);
-}
-// .ui-layout {
-//   --secondary-color: red;
-//   --primary-color: #f5cba7;
-// }
-
-.ui-about {
   pointer-events: none;
   .box {
     pointer-events: auto;
@@ -49,7 +43,7 @@
   //   background-color: blueviolet;
   // }
   .ui-pointer {
-    --secondary-color: red !important;
+    --blue: red !important;
     --primary-color: #f5cba7 !important;
   }
 }
@@ -60,11 +54,11 @@
 }
 .text {
   h1 {
-    color: var(--primary-color);
+    //color: var(--primary-color);
   }
   .signature svg {
     path {
-      fill: var(--primary-color);
+      fill: var(--text-color);
     }
   }
 }
