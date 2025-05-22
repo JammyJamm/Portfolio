@@ -1,6 +1,8 @@
 .ui-layout:has(div.ui-contact) {
-  background-color: var(--text);
+  background-color: var(--black);
   color: rgb(255, 255, 255);
+  --btn-icon-color: #ffc448;
+  --btn-icon-hover-color: #fff;
 }
 .ui-contact {
   svg {
@@ -9,7 +11,7 @@
     path {
       width: 36px;
       height: 36px;
-      fill: #fff;
+      //fill: #fff;
     }
   }
 
@@ -17,7 +19,7 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: var(--tri-color);
+    background: var(--yellow);
 
     position: relative;
     padding: 15px;
@@ -43,7 +45,7 @@
         font-size: 14px;
         transform-origin: 0 60px;
         scale: 1.2;
-        color: var(--secondary-color);
+        color: var(--blue);
         font-weight: bold;
       }
     }

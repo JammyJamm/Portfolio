@@ -1,24 +1,35 @@
+import Epic from "./Epic";
+import Mouse from "./Mouse";
 import "./style.scss";
 import React, { useState } from "react";
 
 function Experience() {
+  const epic = [
+    {
+      startYear: "2017",
+      endYear: "2019",
+      organization: "Randstad",
+    },
+    {
+      startYear: "2019",
+      endYear: "2021",
+      organization: "Lennox International",
+    },
+    {
+      startYear: "2021",
+      endYear: "2023",
+      organization: "TCS",
+    },
+    {
+      startYear: "2023",
+      endYear: "2025",
+      organization: "Creative",
+    },
+  ];
   return (
-    <div>
-      <div className="element">
-        <label>1</label>
-        <input type="checkbox" />
-        <input type="text" value={1} />
-      </div>
-      <div className="element">
-        <label>2</label>
-        <input type="checkbox" />
-        <input type="text" value={2} />
-      </div>
-      <div className="element">
-        <label>3</label>
-        <input type="checkbox" />
-        <input type="text" value={1} />
-      </div>
+    <div className="ui-experience hori_center">
+      <Epic epic={epic} />
+      <Mouse epic={epic} />
     </div>
   );
 }

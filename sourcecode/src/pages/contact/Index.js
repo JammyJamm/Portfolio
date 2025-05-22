@@ -23,9 +23,9 @@ const Contact = () => {
 
   return (
     <div className="ui-contact">
-      <ContactUS style={{ width: "40px", height: "auto" }} />
+      {/* <ContactUS style={{ width: "40px", height: "auto" }} />
       <Phone style={{ width: "40px", height: "auto" }} />
-      <Virtual style={{ width: "40px", height: "auto" }} />
+      <Virtual style={{ width: "40px", height: "auto" }} /> */}
       <div className="container-fluid ">
         <div className="mainLayout">
           <div className="col hori_center">

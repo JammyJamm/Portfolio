@@ -15,3 +15,12 @@ p.jobDescription {
   font-size: 16px;
   //   color: #5a5a5a;
 }
+.hreoImgBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 66%;
+    height: auto;
+  }
+}

@@ -8,7 +8,7 @@
   .left,
   .right {
     width: 50%;
-    background-color: #000;
+    background-color: var(--black);
     position: relative;
     animation-delay: 1.5s;
     animation: leftOpen 1.5s ease-out 1.5s forwards;

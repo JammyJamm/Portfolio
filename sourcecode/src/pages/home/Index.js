@@ -1,4 +1,4 @@
-import heroimg from "../assert/home.svg";
+import heroimg from "../assert/heraImg.jpg";
 import arrowImg from "../assert/arrow.svg";
 import FollowMe from "./FollowMe";
 import "./style.scss";
@@ -26,7 +26,7 @@ const HomePage = () => {
           </div>
           <FollowMe />
         </div>
-        <div className="col-6">
+        <div className="col-6 hreoImgBlock">
           <img src={heroimg} alt="homepage" />
         </div>
       </div>

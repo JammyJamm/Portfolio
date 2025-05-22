@@ -1,7 +1,7 @@
 :root {
   --green: #1abc9c;
   --face: #f5cba7;
-  --black: #000000;
+  --black: #12141d;
   --white: #ffffff;
 }
 body {
@@ -9,16 +9,16 @@ body {
   --bg-color: #ffffff;
   // Button color code
   --btn-pri-blue: #6244c5;
-  --btn--pri-hover-black: #000000;
+  --btn--pri-hover-black: #12141d;
   --btn-pri-text-white: #ffffff;
   --btn-pri-text-hover-white: #ffffff;
   --btn-sec-blue: transparent;
   --btn-tri-gray: #f6f6f6;
-  --btn-tri-hover-blue: #000000;
+  --btn-tri-hover-blue: #12141d;
   // Icon color
   --btn-icon-color: #f6f6f6;
-  --btn-icon-text-color: #000000;
-  --btn-icon-hover-color: #000000;
+  --btn-icon-text-color: #12141d;
+  --btn-icon-hover-color: #12141d;
   --btn-icon-text-hover-color: #f6f6f6;
 
   // Text color code
@@ -31,6 +31,8 @@ body {
   --nav-bg-active: #ffc448;
   --blue: #6244c5;
   --yellow: #ffc448;
+  --black: #12141d;
+  --light-gray: #f6f6f6;
   // ******** //
   // --primary-color: rgb(18, 20, 29);
   // --secondary-color: #6244c5;
@@ -42,7 +44,7 @@ body {
   // --button-text: #ffffff;
   // --button-text-hover: #ffffff;
   // --button-bg: #6244c5;
-  // --button-bg-hover: #000000;
+  // --button-bg-hover: #12141d;
   // --light-gray: #f6f6f6;
 }
 body.greenFace {
@@ -50,7 +52,7 @@ body.greenFace {
   // --secondary-color: #f5cba7;
   // --text-color: #ffffff;
   // --button: #f5cba7;
-  // --button-hover: #000000;
+  // --button-hover: #12141d;
   // --light-gray: #f6f6f6;
 }
 body.blackWhite {
