@@ -1,4 +1,4 @@
-import heroimg from "../assert/heraImg.jpg";
+import heroimg from "../assert/heroImg.png";
 import arrowImg from "../assert/arrow.svg";
 import FollowMe from "./FollowMe";
 import "./style.scss";
