@@ -9,10 +9,14 @@ const HomePage = () => {
       <div className="col hori_center">
         <div className="col-6 text">
           <h1>Senthamil Munusamy</h1>
-          <label className="job">UX Designer & UI Developer </label>
+          <label className="job">
+            AI Developer / UI Developer / UX Design{" "}
+          </label>
           <p className="jobDescription">
-            I'm creative designer based in Bangalore, and I'm very passionate
-            and dedicated to my work.
+            Seeking an opportunity as an AI Developer, with a strong interest in
+            developing intelligent applications, integrating AI technologies,
+            and building innovative solutions using modern AI tools and
+            frameworks.
           </p>
           <div className="btn-group">
             <button className="primary-btn-icon">

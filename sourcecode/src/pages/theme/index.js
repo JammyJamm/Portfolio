@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ReactComponent as Setting } from "../../pages/assert/setting.svg";
+import hearImg from "../../pages/assert/heroImg.png";
 import "./style.scss";
 const Theme = () => {
   const [themeOpen, setThemeOpen] = useState(false);
@@ -21,7 +22,8 @@ const Theme = () => {
     setThemeOpen((pre) => !pre);
   };
   return (
-    <div className="colorCode">
+    <div>
+      {/* <div className="colorCode">
       <div className="colorCode__item">
         <a onClick={handleThemeOpen}>
           <Setting width="22px" height="22px" />
@@ -47,6 +49,8 @@ const Theme = () => {
           </a>
         </div>
       ) : null}
+    </div> */}
+      {/* <img src="hearImg" /> */}
     </div>
   );
 };

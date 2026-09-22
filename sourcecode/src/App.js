@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.scss";
 import "./scss/common.scss";
-import Spinner from "./pages/spinner/Index";
+import Spinner from "./pages/spinner/index";
 import Nav from "./pages/nav/Index";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import HomePage from "./pages/home/Index";

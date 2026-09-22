@@ -1,0 +1,54 @@
+.ui-nopage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  background: #0f1117;
+  color: #fff;
+}
+
+.nopage-content {
+  max-width: 600px;
+}
+
+.nopage-code {
+  font-size: clamp(100px, 20vw, 180px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -8px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.nopage-content h1 {
+  font-size: 36px;
+  margin: 0 0 15px;
+}
+
+.nopage-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.7;
+  margin: 0 auto 30px;
+}
+
+.nopage-content a {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.nopage-content a:hover {
+  background: #fff;
+  color: #0f1117;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
