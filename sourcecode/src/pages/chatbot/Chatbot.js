@@ -1,12 +1,21 @@
 import { useState } from "react";
 import cvFile from "../assert/SenthamilResume.pdf";
 import "./style.scss";
+import { ReactComponent as File } from "../assert/file.svg";
+import { ReactComponent as Hand } from "../assert/hand.svg";
+import { ReactComponent as Mail } from "../assert/mail.svg";
+import { ReactComponent as Call } from "../assert/call.svg";
+import Contact from "../contact/Index";
 
 const ChatBot = ({ onClose }) => {
   const [messages, setMessages] = useState([
     {
       sender: "bot",
-      text: "Hi! 👋 How can I help you?",
+      text: (
+        <>
+          Hi! <Hand className="hand" /> How can I help you?
+        </>
+      ),
     },
   ]);
 
@@ -43,13 +52,13 @@ const ChatBot = ({ onClose }) => {
 
       case "call":
         addMessage("Call me", "Sure! You can call me directly.");
-        window.location.href = "tel:+919XXXXXXXXX";
+        window.location.href = "tel:+917010314568";
         break;
 
       case "email":
         addMessage("Send a mail", "Opening your email application...");
         window.location.href =
-          "mailto:your-email@example.com?subject=Contact%20from%20Portfolio";
+          "mailto:tamiltanishh@gmail.com?subject=Contact%20from%20Portfolio";
         break;
 
       default:
@@ -61,7 +70,9 @@ const ChatBot = ({ onClose }) => {
     <div className="chatbot">
       <div className="chatbot-header">
         <div>
-          <strong>Let's Connect 👋</strong>
+          <strong style={{ display: "flex" }}>
+            Let's Connect <Hand className="hand" />
+          </strong>
           <span>I'm here to help</span>
         </div>
 
@@ -80,16 +91,20 @@ const ChatBot = ({ onClose }) => {
 
       <div className="chatbot-options">
         <button onClick={() => handleOption("cv")}>
-          👋 I'm interested in your CV
+          <Hand className="hand" /> I'm interested in your CV
         </button>
 
         <button onClick={() => handleOption("resume")}>
-          📄 Download Resume
+          <File className="file" /> Download Resume
         </button>
 
-        <button onClick={() => handleOption("call")}>📞 Call me</button>
+        <button onClick={() => handleOption("call")}>
+          <Call className="call" /> Call me
+        </button>
 
-        <button onClick={() => handleOption("email")}>✉️ Send me a mail</button>
+        <button onClick={() => handleOption("email")}>
+          <Mail className="mail" /> Send me a mail
+        </button>
       </div>
     </div>
   );
