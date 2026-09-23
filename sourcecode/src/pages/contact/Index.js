@@ -5,7 +5,12 @@ import FollowMe from "../home/FollowMe";
 import { ReactComponent as ContactUS } from "../assert/contact-us.svg";
 import { ReactComponent as Virtual } from "../assert/virtual-assistants.svg";
 import { ReactComponent as Phone } from "../assert/smartphone.svg";
+import { ReactComponent as Icon } from "../assert/contact.svg";
+import { useState } from "react";
+import ChatBot from "../chatbot/Chatbot";
+
 const Contact = () => {
+  const [showChatBot, setShowChatBot] = useState(false);
   const name = "Senthamil Munusamy";
   console.log(name);
   const rotateName = name.split("").map((char, i) => {
@@ -45,7 +50,13 @@ const Contact = () => {
             </div>
             <div className="col-3 col verti_center hori_center">
               <div className="box">
-                <button className="btn-secondary">Say Hello </button>
+                <button
+                  className="btn-secondary"
+                  onClick={() => setShowChatBot(true)}
+                >
+                  Say Hello
+                  <Icon width="26px" height="26px" />
+                </button>
               </div>
             </div>
           </div>
@@ -53,13 +64,25 @@ const Contact = () => {
             <div className="col-4">
               <div className="box">
                 <label>Call :</label>
-                <button className="secondary-btn">+91 7010314568</button>
+                <button
+                  className="secondary-btn"
+                  onClick={() => (window.location.href = "tel:+917010314568")}
+                >
+                  (+91) 7010314568
+                </button>
               </div>
             </div>
             <div className="col-4">
               <div className="box">
                 <label>Email :</label>
-                <button className="secondary-btn">tamiltanish@gmail.com</button>
+                <button
+                  className="secondary-btn"
+                  onClick={() =>
+                    (window.location.href = "mailto:tamiltanish@gmail.com")
+                  }
+                >
+                  tamiltanish@gmail.com
+                </button>
               </div>
             </div>
             <div className="col-4">
@@ -68,6 +91,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      {showChatBot && <ChatBot onClose={() => setShowChatBot(false)} />}
     </div>
   );
 };

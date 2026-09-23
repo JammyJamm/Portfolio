@@ -4,6 +4,7 @@ import FollowMe from "./FollowMe";
 import cvFile from "../assert/SenthamilResume.pdf";
 import "./style.scss";
 import { ReactComponent as Icon } from "../assert/contact.svg";
+
 import { useState } from "react";
 import ChatBot from "../chatbot/Chatbot";
 const HomePage = () => {
