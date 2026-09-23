@@ -8,7 +8,7 @@ const Review = () => {
 
   const reviewData = [
     {
-      name: "Arun Praveen",
+      name: "Mr. Arun Praveen",
       rating: 5,
       review:
         "Strong real-time experience in IoT solutions with an excellent understanding of user experience. Demonstrates the ability to design intuitive, practical, and user-friendly interfaces for complex IoT and industrial applications. His UX approach and attention to usability contribute significantly to delivering effective digital experiences.",
@@ -19,36 +19,36 @@ const Review = () => {
     },
 
     {
-      name: "Dinesh Pandian",
+      name: "Mr. Dinesh Pandian",
       rating: 5,
       review:
         "Strong experience in e-commerce and SAP Hybris website development, with a focus on responsive design, usability, and consistent UI experiences. Demonstrates good understanding of modern web development practices and the ability to deliver responsive, scalable, and user-friendly e-commerce solutions.",
       project:
         "Heatcraft Refrigeration – Middle East | Heatcraft – intelliGen | Heatcraft – Brazil",
-      company: "Creative Synergies Group",
+      company: "Lennox India Technology Centre Private Limited",
       imageURL:
         "https://github.com/JammyJamm/Portfolio/blob/main/sourcecode/src/pages/assert/senthamil.jpg?raw=true",
     },
 
     {
-      name: "Jaya Lakshmi",
+      name: "Mrs. Jaya Lakshmi",
       rating: 5,
       review:
         "Strong experience in designing company websites and connected IoT device experiences. Demonstrates a good understanding of UX design, responsive interfaces, usability, and user-centered design principles. Contributes effectively to creating intuitive digital experiences across web and connected-device platforms.",
       project:
         "Lennox India – Company Website | Lennox India – S40 & E30 Smart Thermostat",
-      company: "Lennox India Technology",
+      company: "Randstad India Private Limited",
       imageURL:
         "https://github.com/JammyJamm/Portfolio/blob/main/sourcecode/src/pages/assert/senthamil.jpg?raw=true",
     },
 
     {
-      name: "Azeem",
+      name: "Mr.Azeem",
       rating: 5,
       review:
         "Strong experience in e-commerce website development with a focus on responsive, user-friendly, and visually consistent interfaces. Demonstrates good understanding of modern UI development practices, responsive design, and delivering scalable digital experiences for business applications.",
       project: "HYFRA | Kysor Warren",
-      company: "Creative Synergies Group",
+      company: "Infoville Solutions India Private Limited",
       imageURL:
         "https://github.com/JammyJamm/Portfolio/blob/main/sourcecode/src/pages/assert/senthamil.jpg?raw=true",
     },

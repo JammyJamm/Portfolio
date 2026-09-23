@@ -174,7 +174,12 @@ const About = () => {
 
             {/* Contact */}
             <div className="btn-group signature">
-              <button className="btn-secondary">Contact me</button>
+              <button
+                className="btn-secondary"
+                onClick={() => (window.location.href = "tel:+917010314568")}
+              >
+                Contact me
+              </button>
 
               <Signature width="300px" />
             </div>

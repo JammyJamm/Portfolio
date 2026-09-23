@@ -70,56 +70,57 @@
   margin-bottom: 15px;
   font-size: 20px;
 }
+.ui-review {
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+  }
 
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-}
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
 
-.carousel-btn {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #ccc;
-  background: transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    transition: all 0.3s ease;
+  }
 
-  transition: all 0.3s ease;
-}
+  .carousel-btn:hover {
+    background: #000;
+    color: #fff;
+  }
 
-.carousel-btn:hover {
-  background: #000;
-  color: #fff;
-}
+  .carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.carousel-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+  .dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dot.active {
-  width: 24px;
-  border-radius: 10px;
-  background: #000;
+  .dot.active {
+    width: 24px;
+    border-radius: 10px;
+    background: #000;
+  }
 }
 // Carosel ends
