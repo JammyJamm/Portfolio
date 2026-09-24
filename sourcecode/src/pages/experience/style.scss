@@ -2,17 +2,30 @@
   width: 100%;
   height: 100vh;
   background-color: var(--yellow);
+  position: relative;
+  overflow: hidden;
+
+  /* ==========================================================================
+     Mouse Wheel & Timeline Indicator
+     ========================================================================== */
   .ui-mouse {
     width: 100%;
     height: 100px;
     position: fixed;
     bottom: 0px;
+    left: 0;
+    right: 0;
     flex-direction: column;
+    z-index: 100;
+    pointer-events: auto;
+
     .block {
       display: flex;
       align-items: center;
       flex-direction: column;
+      margin-top: 6px;
     }
+
     .wheel {
       width: 18px;
       height: 30px;
@@ -20,8 +33,8 @@
       border-radius: 50px;
       display: flex;
       justify-content: center;
-
       overflow: hidden;
+
       &::after {
         content: "";
         display: block;
@@ -29,11 +42,11 @@
         height: 2px;
         border-radius: 50px;
         background-color: #fff;
-        // animation: scroll 1.5s linear infinite;
         animation: scroll 1.5s ease-out 1.5s infinite;
         position: relative;
       }
     }
+
     p {
       margin-top: 6px;
       color: #fff;
@@ -45,14 +58,13 @@
     .year {
       width: 100%;
       padding-left: 80px;
+      padding-right: 40px;
+      box-sizing: border-box;
+
       .line {
-        // border-style: dotted;
-        // border-color: #fff;
-        // border-image-source: url(https://cl.ly/3c2J3c0l3r0P/dots.svg);
-        // border-image-slice: 17% 22%;
-        // border-image-repeat: round;
         border: 1.2px dotted #fff;
       }
+
       .list {
         display: flex;
         justify-content: center;
@@ -60,8 +72,10 @@
         flex-direction: column;
         position: relative;
         margin-top: 10px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        outline: none;
+
         &::after {
-          content: "";
           content: "";
           display: block;
           width: 10px;
@@ -70,48 +84,56 @@
           border-radius: 50px;
           position: absolute;
           top: -16px;
+          transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         label {
           color: #fff;
           opacity: 0.7;
+          font-size: 13px;
+          transition: opacity 0.3s ease;
         }
-      }
-    }
-  }
-  .epic {
-    width: 100%;
-    height: 100%;
-    .listBlock {
-      pointer-events: auto;
-      width: 200%;
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      perspective: 200px;
-      overflow: auto;
-      white-space: nowrap;
-      box-sizing: border-box;
-      .list {
-        label,
+
         p {
           color: #fff;
+          opacity: 0.7;
+          font-size: 11px;
+          margin-top: 2px;
+          transition: opacity 0.3s ease;
         }
-      }
-      .list {
-        padding: 46px 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--blue);
-        max-width: 200px;
 
-        // transform: rotateY(0.025turn);
+        &.active {
+          label {
+            opacity: 1;
+            font-weight: 700;
+          }
+          p {
+            opacity: 1;
+            font-weight: 500;
+          }
+          &::after {
+            background-color: var(--blue, #6244c5);
+            box-shadow: 0 0 0 3px #ffffff;
+            transform: scale(1.3);
+          }
+        }
+
+        &:hover {
+          label {
+            opacity: 1;
+          }
+          p {
+            opacity: 0.9;
+          }
+          &::after {
+            transform: scale(1.15);
+          }
+        }
       }
     }
   }
 }
+
 @keyframes scroll {
   from {
     top: 0%;
@@ -121,104 +143,510 @@
   }
 }
 
-/// Try code
-.epic-wrapper {
+/* ==========================================================================
+   Experience Container & 3D Project Stack
+   ========================================================================== */
+.experience-container {
   width: 100%;
+  height: 100%;
   position: relative;
-}
-
-.epic-project {
-  width: 100%;
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 30px;
-  box-sizing: border-box;
-
-  /* Important */
-  scroll-snap-align: start;
-}
-
-.epic-content {
-  width: 90%;
-  height: 80vh;
-
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+}
 
-  padding: 60px;
+.project-stack {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: auto;
 
-  box-sizing: border-box;
+  .project-stack-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
-  border-radius: 30px;
-
-  background: #fff;
-
-  transform: scale(0.85);
-  opacity: 0.5;
-
+/* ==========================================================================
+   Project Epic (3D Perspective Card)
+   ========================================================================== */
+.project-epic {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 66vw;
+  max-width: 720px;
+  height: 54vh;
+  max-height: 450px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
   transition:
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.7s ease;
-
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
-}
+  border-radius: 32px;
+  outline: none;
 
-/* CURRENT PROJECT */
-
-.epic-project.active .epic-content {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* Text */
-
-.epic-number {
-  font-size: 18px;
-  margin-bottom: 20px;
-  opacity: 0.5;
-}
-
-.epic-years {
-  font-size: 16px;
-  margin-bottom: 20px;
-  opacity: 0.6;
-}
-
-.epic-content h2 {
-  margin: 0;
-
-  font-size: clamp(50px, 9vw, 140px);
-  line-height: 0.95;
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-  .epic-project {
-    height: 100svh;
-    padding: 20px;
-  }
-
+  /* Card content wrapper */
   .epic-content {
-    width: 94%;
-    height: 75vh;
-    padding: 30px;
-    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    background: #ffffff;
+    padding: 48px 56px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    box-shadow:
+      0 25px 60px -15px rgba(18, 20, 29, 0.16),
+      0 10px 25px -10px rgba(18, 20, 29, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    user-select: none;
+    overflow: hidden;
+    transition: box-shadow 0.6s ease;
+
+    .epic-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .epic-number {
+      font-size: 20px;
+      font-family: font-medium, sans-serif;
+      letter-spacing: 2px;
+      color: var(--blue, #6244c5);
+      margin: 0;
+    }
+
+    .epic-badge {
+      font-size: 11px;
+      font-family: font-medium, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #6244c5;
+      background: rgba(98, 68, 197, 0.08);
+      padding: 5px 12px;
+      border-radius: 50px;
+    }
+
+    .epic-years {
+      font-size: 16px;
+      font-family: font-regular, sans-serif;
+      color: #777777;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    h2,
+    .epic-organization {
+      margin: 0;
+      font-size: clamp(40px, 5.6vw, 80px);
+      line-height: 1.05;
+      font-family: font-bold, sans-serif;
+      color: var(--text-color, #12141d);
+      word-break: break-word;
+    }
+
+    .epic-role {
+      margin-top: 14px;
+      margin-bottom: 0;
+      font-size: 17px;
+      font-family: font-medium, sans-serif;
+      color: var(--blue, #6244c5);
+    }
+
+    .epic-description {
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-size: 14px;
+      color: rgba(18, 20, 29, 0.65);
+      line-height: 1.5;
+    }
+
+    .epic-active-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      font-size: 12px;
+      font-family: font-medium, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #2e7d32;
+
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #2e7d32;
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+        animation: pulse 2s infinite;
+      }
+    }
   }
 
-  .epic-content h2 {
-    font-size: 48px;
+  /* --------------------------------------------------------------------------
+     Desktop 3D Transitions & Alternating Left/Right Arrangement
+     -------------------------------------------------------------------------- */
+
+  /* ACTIVE CARD (delta = 0) */
+  &.is-active {
+    opacity: 1;
+    filter: blur(0px);
+    z-index: 100;
+    pointer-events: auto;
+
+    &.is-left {
+      transform: translate3d(calc(-50% - 15vw), -50%, 0px) scale(1) rotateY(6deg);
+    }
+
+    &.is-right {
+      transform: translate3d(calc(-50% + 15vw), -50%, 0px) scale(1) rotateY(-6deg);
+    }
+
+    .epic-content {
+      box-shadow:
+        0 30px 70px -15px rgba(18, 20, 29, 0.22),
+        0 12px 30px -10px rgba(18, 20, 29, 0.12);
+    }
+  }
+
+  /* PAST CARD (delta < 0): Moves/zooms toward center/front, scales up, and fades/hides */
+  &.is-past {
+    pointer-events: none;
+    z-index: 120;
+    opacity: 0;
+    filter: blur(5px);
+
+    &.is-past-1 {
+      transform: translate3d(-50%, -50%, 300px) scale(1.24) rotateY(0deg);
+    }
+
+    &.is-past-far {
+      transform: translate3d(-50%, -50%, 550px) scale(1.45) rotateY(0deg);
+      visibility: hidden;
+    }
+  }
+
+  /* UPCOMING CARDS (delta > 0): Positioned behind in depth, slightly smaller */
+  &.is-upcoming {
+    pointer-events: auto;
+    cursor: pointer;
+
+    /* Depth 1 (delta = 1) */
+    &.is-depth-1 {
+      z-index: 90;
+      opacity: 0.58;
+      filter: blur(0.5px);
+
+      &.is-left {
+        transform: translate3d(calc(-50% - 15vw), -50%, -180px) scale(0.85) rotateY(6deg);
+      }
+
+      &.is-right {
+        transform: translate3d(calc(-50% + 15vw), -50%, -180px) scale(0.85) rotateY(-6deg);
+      }
+
+      &:hover {
+        opacity: 0.78;
+        filter: blur(0px);
+      }
+    }
+
+    /* Depth 2 (delta = 2) */
+    &.is-depth-2 {
+      z-index: 80;
+      opacity: 0.35;
+      filter: blur(1.5px);
+
+      &.is-left {
+        transform: translate3d(calc(-50% - 17vw), -50%, -360px) scale(0.72) rotateY(7deg);
+      }
+
+      &.is-right {
+        transform: translate3d(calc(-50% + 17vw), -50%, -360px) scale(0.72) rotateY(-7deg);
+      }
+
+      &:hover {
+        opacity: 0.52;
+      }
+    }
+
+    /* Depth 3 (delta = 3) */
+    &.is-depth-3 {
+      z-index: 70;
+      opacity: 0.18;
+      filter: blur(2.5px);
+
+      &.is-left {
+        transform: translate3d(calc(-50% - 19vw), -50%, -540px) scale(0.60) rotateY(8deg);
+      }
+
+      &.is-right {
+        transform: translate3d(calc(-50% + 19vw), -50%, -540px) scale(0.60) rotateY(-8deg);
+      }
+    }
+
+    /* Depth Far (delta >= 4) */
+    &.is-depth-far {
+      z-index: 50;
+      opacity: 0;
+      filter: blur(4px);
+      transform: translate3d(-50%, -50%, -720px) scale(0.48);
+      pointer-events: none;
+      visibility: hidden;
+    }
   }
 }
-html {
-  scroll-behavior: smooth;
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(46, 125, 50, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+  }
 }
 
-body {
-  scroll-snap-type: y proximity;
+/* ==========================================================================
+   Floating Carousel Controls (Arrow Buttons & Pagination)
+   ========================================================================== */
+.stack-controls {
+  position: absolute;
+  right: 40px;
+  top: 48%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 150;
+  pointer-events: auto;
+
+  .control-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    color: var(--black, #12141d);
+    padding: 0;
+    margin: 0;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+
+    &:hover:not(:disabled) {
+      transform: scale(1.1);
+      background: var(--blue, #6244c5);
+      color: #ffffff;
+    }
+
+    &:disabled,
+    &.disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+
+  .stack-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: font-medium, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+
+    .current-num {
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .divider {
+      opacity: 0.6;
+      font-size: 11px;
+      line-height: 1;
+      margin: 2px 0;
+    }
+
+    .total-num {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .project-epic {
+    width: 76vw;
+    max-width: 620px;
+    height: 50vh;
+    max-height: 420px;
+
+    &.is-active {
+      &.is-left {
+        transform: translate3d(calc(-50% - 8vw), -50%, 0px) scale(1) rotateY(4deg);
+      }
+      &.is-right {
+        transform: translate3d(calc(-50% + 8vw), -50%, 0px) scale(1) rotateY(-4deg);
+      }
+    }
+
+    &.is-upcoming {
+      &.is-depth-1 {
+        &.is-left {
+          transform: translate3d(calc(-50% - 8vw), -50%, -150px) scale(0.86) rotateY(4deg);
+        }
+        &.is-right {
+          transform: translate3d(calc(-50% + 8vw), -50%, -150px) scale(0.86) rotateY(-4deg);
+        }
+      }
+
+      &.is-depth-2 {
+        &.is-left {
+          transform: translate3d(calc(-50% - 10vw), -50%, -300px) scale(0.74) rotateY(5deg);
+        }
+        &.is-right {
+          transform: translate3d(calc(-50% + 10vw), -50%, -300px) scale(0.74) rotateY(-5deg);
+        }
+      }
+
+      &.is-depth-3 {
+        &.is-left {
+          transform: translate3d(calc(-50% - 12vw), -50%, -450px) scale(0.62) rotateY(6deg);
+        }
+        &.is-right {
+          transform: translate3d(calc(-50% + 12vw), -50%, -450px) scale(0.62) rotateY(-6deg);
+        }
+      }
+    }
+  }
+
+  .stack-controls {
+    right: 20px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .project-epic {
+    width: 90vw;
+    max-width: none;
+    height: 48vh;
+    max-height: 380px;
+    top: 44%;
+
+    .epic-content {
+      padding: 30px;
+      border-radius: 24px;
+
+      h2,
+      .epic-organization {
+        font-size: clamp(32px, 8vw, 48px);
+      }
+    }
+
+    &.is-active {
+      transform: translate3d(-50%, -50%, 0px) scale(1) rotateY(0deg);
+    }
+
+    &.is-past {
+      &.is-past-1 {
+        transform: translate3d(-50%, -50%, 200px) scale(1.18) rotateY(0deg);
+      }
+      &.is-past-far {
+        transform: translate3d(-50%, -50%, 380px) scale(1.35) rotateY(0deg);
+        visibility: hidden;
+      }
+    }
+
+    &.is-upcoming {
+      /* Vertical cascade stack preserving depth and zoom on mobile */
+      &.is-depth-1 {
+        transform: translate3d(-50%, calc(-50% - 18px), -120px) scale(0.90) rotateY(0deg);
+        opacity: 0.6;
+      }
+
+      &.is-depth-2 {
+        transform: translate3d(-50%, calc(-50% - 34px), -240px) scale(0.80) rotateY(0deg);
+        opacity: 0.35;
+      }
+
+      &.is-depth-3 {
+        transform: translate3d(-50%, calc(-50% - 48px), -360px) scale(0.70) rotateY(0deg);
+        opacity: 0.18;
+      }
+
+      &.is-depth-far {
+        transform: translate3d(-50%, calc(-50% - 60px), -480px) scale(0.60) rotateY(0deg);
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .stack-controls {
+    right: 12px;
+    gap: 10px;
+
+    .control-btn {
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  .ui-experience {
+    .ui-mouse {
+      .year {
+        padding-left: 20px;
+        padding-right: 20px;
+        .list {
+          label {
+            font-size: 11px;
+          }
+          p {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
 }

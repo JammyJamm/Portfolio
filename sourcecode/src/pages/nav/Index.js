@@ -15,6 +15,7 @@ const Nav = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="Portfolio" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="experience" element={<Experience />} />
             <Route path="contact" element={<Contact />} />

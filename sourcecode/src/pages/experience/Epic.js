@@ -1,58 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./style.scss";
+import React from "react";
+import ExperienceContainer from "./ExperienceContainer";
+import ProjectStack from "./ProjectStack";
+import ProjectEpic from "./ProjectEpic";
 
-const Epic = ({ epic }) => {
-  const projectRefs = useRef([]);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.dataset.index);
-            setActiveIndex(index);
-          }
-        });
-      },
-      {
-        threshold: 0.6,
-      },
+const Epic = ({ epic, activeIndex, onSelectProject }) => {
+  // If activeIndex is provided externally, render ProjectStack directly;
+  // otherwise manage complete experience via ExperienceContainer.
+  if (typeof activeIndex === "number") {
+    return (
+      <ProjectStack
+        epic={epic}
+        activeIndex={activeIndex}
+        onSelectProject={onSelectProject}
+      />
     );
+  }
 
-    projectRefs.current.forEach((project) => {
-      if (project) observer.observe(project);
-    });
-
-    return () => observer.disconnect();
-  }, [epic]);
-
-  return (
-    <div className="epic-wrapper">
-      {epic.map((project, index) => (
-        <section
-          key={index}
-          data-index={index}
-          ref={(el) => {
-            projectRefs.current[index] = el;
-          }}
-          className={`epic-project ${activeIndex === index ? "active" : ""}`}
-        >
-          <div className="epic-content">
-            <span className="epic-number">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-
-            <span className="epic-years">
-              {project.startYear} — {project.endYear}
-            </span>
-
-            <h2>{project.organization}</h2>
-          </div>
-        </section>
-      ))}
-    </div>
-  );
+  return <ExperienceContainer epic={epic} />;
 };
 
+export { ProjectStack, ProjectEpic, ExperienceContainer };
 export default Epic;
