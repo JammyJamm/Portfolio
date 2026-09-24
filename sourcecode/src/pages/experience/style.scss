@@ -120,3 +120,105 @@
     top: 100%;
   }
 }
+
+/// Try code
+.epic-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.epic-project {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  /* Important */
+  scroll-snap-align: start;
+}
+
+.epic-content {
+  width: 90%;
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 60px;
+
+  box-sizing: border-box;
+
+  border-radius: 30px;
+
+  background: #fff;
+
+  transform: scale(0.85);
+  opacity: 0.5;
+
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s ease;
+
+  will-change: transform, opacity;
+}
+
+/* CURRENT PROJECT */
+
+.epic-project.active .epic-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Text */
+
+.epic-number {
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.epic-years {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.epic-content h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 9vw, 140px);
+  line-height: 0.95;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .epic-project {
+    height: 100svh;
+    padding: 20px;
+  }
+
+  .epic-content {
+    width: 94%;
+    height: 75vh;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .epic-content h2 {
+    font-size: 48px;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y proximity;
+}

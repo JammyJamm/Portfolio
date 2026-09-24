@@ -1,7 +1,7 @@
 import Epic from "./Epic";
 import Mouse from "./Mouse";
 import "./style.scss";
-import React, { useState } from "react";
+import React from "react";
 
 function Experience() {
   const epic = [
@@ -26,9 +26,11 @@ function Experience() {
       organization: "Creative",
     },
   ];
+
   return (
-    <div className="ui-experience hori_center">
+    <div className="ui-experience">
       <Epic epic={epic} />
+
       <Mouse epic={epic} />
     </div>
   );
