@@ -160,7 +160,7 @@
   position: absolute;
   top: 48%;
   left: 50%;
-  width: 68vw;
+  width: 52vw;
   max-width: 740px;
   min-height: 380px;
   max-height: 520px;
@@ -191,7 +191,9 @@
       0 12px 28px -8px rgba(18, 20, 29, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.95);
     overflow: hidden;
-    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    transition:
+      box-shadow 0.4s ease,
+      border-color 0.4s ease;
 
     /* Top Header Row */
     .epic-header {
@@ -344,7 +346,10 @@
         font-size: 13px;
         font-family: font-medium, sans-serif;
         box-shadow: 0 4px 14px rgba(98, 68, 197, 0.28);
-        transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
 
         svg {
           transition: transform 0.2s ease;
@@ -372,7 +377,9 @@
         border-radius: 50px;
         background: rgba(18, 20, 29, 0.05);
         border: 1px solid rgba(18, 20, 29, 0.08);
-        transition: background 0.2s ease, transform 0.2s ease;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
 
         &:hover {
           background: rgba(18, 20, 29, 0.1);
@@ -454,7 +461,7 @@
    ========================================================================== */
 .project-progress {
   position: absolute;
-  left: 40px;
+  right: 100px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -554,7 +561,11 @@
     cursor: pointer;
     box-shadow: 0 8px 24px rgba(18, 20, 29, 0.12);
     color: var(--black, #12141d);
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease,
+      opacity 0.2s ease;
 
     &:hover:not(:disabled) {
       transform: scale(1.12);
@@ -614,7 +625,9 @@
       flex-direction: column;
       position: relative;
       margin-top: 10px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
       outline: none;
       background: transparent;
       border: none;
@@ -629,7 +642,10 @@
         border-radius: 50px;
         position: absolute;
         top: -15px;
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          background-color 0.3s ease,
+          box-shadow 0.3s ease;
       }
 
       label {
@@ -664,7 +680,9 @@
         }
         &::after {
           background-color: var(--blue, #6244c5);
-          box-shadow: 0 0 0 3px #ffffff, 0 0 12px rgba(98, 68, 197, 0.6);
+          box-shadow:
+            0 0 0 3px #ffffff,
+            0 0 12px rgba(98, 68, 197, 0.6);
           transform: scale(1.35);
         }
       }
@@ -848,7 +866,9 @@
         color: var(--black, #12141d);
         cursor: pointer;
         flex-shrink: 0;
-        transition: background 0.2s ease, transform 0.2s ease;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
 
         &:hover {
           background: rgba(18, 20, 29, 0.12);
@@ -876,7 +896,9 @@
           border-radius: 50px;
           font-size: 13px;
           font-family: font-medium, sans-serif;
-          transition: background 0.2s ease, transform 0.2s ease;
+          transition:
+            background 0.2s ease,
+            transform 0.2s ease;
 
           &:hover {
             background: #4e32af;

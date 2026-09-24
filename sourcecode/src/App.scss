@@ -6,6 +6,7 @@
   position: relative;
   pointer-events: none;
   transition: scale 0.4s ease-in;
+  z-index: 9999;
   .ui-slowPointer {
     width: 36px;
     height: 36px;
