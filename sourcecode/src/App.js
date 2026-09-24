@@ -42,11 +42,12 @@ function App() {
     <div className="ui-layout" onMouseMove={showCoords}>
       {animate ? <LandingAnimation /> : ""}
       <Theme />
+
       <Nav />
-      <LogoImg />
+
       <div
         className="ui-pointer"
-        style={{ position: "absolute", top: posY, left: posX }}
+        style={{ position: "fixed", top: posY, left: posX }}
       >
         <div
           className="ui-slowPointer"

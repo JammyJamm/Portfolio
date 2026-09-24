@@ -10,7 +10,7 @@ const Available = () => {
 
       <div className="availableLight"></div>
       <div className="text">
-        <a>Hey there !</a>
+        <a>Seeking new challenges and career growth !</a>
       </div>
     </div>
   );

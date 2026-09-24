@@ -14,7 +14,17 @@
     pointer-events: none;
   }
 }
-
+body:has(
+    button:hover,
+    a:hover,
+    [role="button"]:hover,
+    input[type="submit"]:hover,
+    input[type="button"]:hover
+  )
+  .ui-slowPointer {
+  opacity: 0;
+  visibility: hidden;
+}
 main {
   pointer-events: none;
 

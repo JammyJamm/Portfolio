@@ -8,6 +8,7 @@ import { ReactComponent as Review } from "../assert/review.svg";
 
 import Available from "../available/index";
 import { useEffect, useState } from "react";
+import LogoImg from "../logo";
 const Layout = () => {
   const [isActive, setIsActive] = useState("");
   useEffect(() => {
@@ -57,6 +58,7 @@ const Layout = () => {
         </ul>
       </div>
       <Outlet />
+      <LogoImg />
       <Available />
     </div>
   );

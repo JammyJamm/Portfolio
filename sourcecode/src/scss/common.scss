@@ -21,8 +21,8 @@ body {
   color: var(--text-color);
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .container {
 }
@@ -164,6 +164,8 @@ a {
   justify-content: center;
   transition: all 0.6s ease-in;
   &::after {
+    display: block;
+    content: "";
     border-color: var(--btn-icon-color);
   }
   &:hover {
@@ -177,4 +179,15 @@ a {
       border-color: var(--btn-icon-text-hover-color);
     }
   }
+}
+body:has(
+    button:hover,
+    a:hover,
+    [role="button"]:hover,
+    input[type="submit"]:hover,
+    input[type="button"]:hover
+  )
+  .ui-slowPointer {
+  opacity: 0;
+  visibility: hidden;
 }
