@@ -1,23 +1,25 @@
 import React from "react";
 import ExperienceContainer from "./ExperienceContainer";
-import ProjectStack from "./ProjectStack";
+import ProjectCascade from "./ProjectCascade";
 import ProjectEpic from "./ProjectEpic";
+import ExperienceTimeline from "./ExperienceTimeline";
+import ProjectDetails from "./ProjectDetails";
+import ProjectProgress from "./ProjectProgress";
+import ProjectNavigation from "./ProjectNavigation";
+import ProjectStack from "./ProjectStack";
 
-const Epic = ({ epic, activeIndex, onSelectProject }) => {
-  // If activeIndex is provided externally, render ProjectStack directly;
-  // otherwise manage complete experience via ExperienceContainer.
-  if (typeof activeIndex === "number") {
-    return (
-      <ProjectStack
-        epic={epic}
-        activeIndex={activeIndex}
-        onSelectProject={onSelectProject}
-      />
-    );
-  }
-
+const Epic = ({ epic }) => {
   return <ExperienceContainer epic={epic} />;
 };
 
-export { ProjectStack, ProjectEpic, ExperienceContainer };
+export {
+  ProjectCascade,
+  ProjectEpic,
+  ExperienceContainer,
+  ExperienceTimeline,
+  ProjectDetails,
+  ProjectProgress,
+  ProjectNavigation,
+  ProjectStack,
+};
 export default Epic;
