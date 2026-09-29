@@ -1,5 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
-//import home from "../assert/home.svg";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { ReactComponent as Home } from "../assert/home.svg";
 import { ReactComponent as Experience } from "../assert/experience.svg";
 import { ReactComponent as Contact } from "../assert/contact.svg";
@@ -7,56 +6,68 @@ import { ReactComponent as About } from "../assert/about.svg";
 import { ReactComponent as Review } from "../assert/review.svg";
 
 import Available from "../available/index";
-import { useEffect, useState } from "react";
 import LogoImg from "../logo";
+
 const Layout = () => {
-  const [isActive, setIsActive] = useState("");
-  useEffect(() => {
-    setIsActive(window.location.pathname);
-  }, [window.location.pathname]);
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <div className="ui-page">
-      <div className="ui-nav">
+      <nav className="ui-nav" aria-label="Main Navigation">
         <ul>
           <li>
-            <Link to="/" className={isActive === "/" ? "active" : ""}>
-              <Home width={50} height={50} className="icon" />
+            <Link
+              to="/"
+              className={currentPath === "/" || currentPath === "/Portfolio" ? "active" : ""}
+              aria-label="Home page"
+              title="Home"
+            >
+              <Home width={50} height={50} className="icon" aria-hidden="true" />
             </Link>
           </li>
           <li>
-            <Link to="/about" className={isActive === "/about" ? "active" : ""}>
-              {/* About */}
-              <About width={50} height={50} className="icon" />
+            <Link
+              to="/about"
+              className={currentPath === "/about" ? "active" : ""}
+              aria-label="About page"
+              title="About"
+            >
+              <About width={50} height={50} className="icon" aria-hidden="true" />
             </Link>
           </li>
           <li>
             <Link
               to="/experience"
-              className={isActive === "/experience" ? "active" : ""}
+              className={currentPath === "/experience" ? "active" : ""}
+              aria-label="Experience & Projects"
+              title="Experience"
             >
-              {/* Experience */}
-              <Experience width={50} height={50} className="icon" />
+              <Experience width={50} height={50} className="icon" aria-hidden="true" />
             </Link>
           </li>
           <li>
             <Link
               to="/contact"
-              className={isActive === "/contact" ? "active" : ""}
+              className={currentPath === "/contact" ? "active" : ""}
+              aria-label="Contact page"
+              title="Contact"
             >
-              {/* Contact */}
-              <Contact width={50} height={50} className="icon" />
+              <Contact width={50} height={50} className="icon" aria-hidden="true" />
             </Link>
           </li>
           <li>
             <Link
               to="/review"
-              className={isActive === "/review" ? "active" : ""}
+              className={currentPath === "/review" ? "active" : ""}
+              aria-label="Reviews and feedback"
+              title="Reviews"
             >
-              <Review width={50} height={50} className="icon" />
+              <Review width={50} height={50} className="icon" aria-hidden="true" />
             </Link>
           </li>
         </ul>
-      </div>
+      </nav>
       <Outlet />
       <LogoImg />
       <Available />

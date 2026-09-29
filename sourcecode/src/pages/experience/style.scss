@@ -66,7 +66,7 @@
 .experience-header {
   position: absolute;
   top: 24px;
-  left: 36px;
+  left: 80px;
   z-index: 140;
   display: flex;
   flex-direction: column;
@@ -983,43 +983,70 @@
    Responsive Adaptations
    ========================================================================== */
 
-/* Tablet (1024px and below) */
-@media (max-width: 1024px) {
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
   .project-epic {
-    width: 74vw;
-    max-width: 640px;
+    width: 68vw;
+    max-width: 560px;
     max-height: 480px;
+    min-height: 340px;
 
     .epic-content {
-      padding: 32px 36px;
+      padding: 28px 32px;
     }
   }
 
   .project-progress {
-    left: 20px;
+    right: 76px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .project-navigation {
     right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .experience-header {
-    left: 20px;
-    top: 18px;
+    left: 74px;
+    top: 20px;
+  }
+
+  .experience-timeline.ui-mouse {
+    bottom: 0px;
+    height: 95px;
+
+    .year {
+      padding-left: 80px;
+      padding-right: 70px;
+    }
   }
 }
 
-/* Mobile (768px and below) */
-@media (max-width: 768px) {
+/* Mobile (320px - 767px) */
+@media (max-width: 767px) {
   .experience-header {
-    left: 16px;
+    left: 64px;
     top: 14px;
-    right: 16px;
+    right: 64px;
+    z-index: 140;
 
     .header-meta {
       gap: 6px;
+      .header-tag {
+        font-size: 10px;
+        padding: 3px 8px;
+        letter-spacing: 1.5px;
+      }
+
       .header-active-context {
         font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
       }
     }
 
@@ -1029,94 +1056,158 @@
   }
 
   .project-epic {
-    width: 88vw;
-    max-width: none;
-    max-height: 450px;
-    min-height: 320px;
-    top: 46%;
+    width: calc(100vw - 24px);
+    max-width: 420px;
+    max-height: calc(100vh - 195px);
+    min-height: 290px;
+    top: 52%;
 
     .epic-content {
-      padding: 24px 22px;
-      border-radius: 20px;
+      padding: 16px 16px 14px 16px;
+      border-radius: 18px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
 
       .epic-header {
+        margin-bottom: 2px;
+
+        .epic-number {
+          font-size: 18px;
+        }
+
+        .epic-total {
+          font-size: 11px;
+        }
+
         .epic-badges-group {
+          .epic-badge {
+            font-size: 10px;
+            padding: 2px 7px;
+          }
+
           .side-badge {
             display: none;
           }
         }
       }
 
-      .epic-project-title {
-        font-size: clamp(24px, 6vw, 32px);
+      .epic-company-bar {
+        font-size: 12px;
+        margin: 1px 0;
+      }
+
+      .epic-duration-meta {
+        font-size: 10px;
         margin-bottom: 6px;
       }
 
+      .epic-project-title {
+        font-size: clamp(18px, 5.2vw, 24px);
+        margin-bottom: 4px;
+        line-height: 1.15;
+      }
+
       .epic-description {
-        font-size: 13px;
+        font-size: 12px;
+        line-height: 1.45;
         -webkit-line-clamp: 2;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
       }
 
       .epic-skills-preview {
         gap: 4px;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
 
         .epic-chip {
           font-size: 10px;
-          padding: 3px 8px;
+          padding: 2px 6px;
+          border-radius: 4px;
         }
       }
 
       .epic-card-actions {
-        padding-top: 10px;
+        padding-top: 8px;
         gap: 8px;
+        flex-wrap: wrap;
 
         .details-btn {
-          padding: 8px 16px;
-          font-size: 12px;
+          padding: 7px 14px;
+          font-size: 11px;
+          min-height: 36px;
         }
 
         .epic-action-link {
-          padding: 7px 12px;
-          font-size: 12px;
+          padding: 6px 10px;
+          font-size: 11px;
+          min-height: 36px;
+        }
+
+        .epic-active-indicator {
+          font-size: 10px;
         }
       }
     }
   }
 
+  /* Reposition progress to top bar on mobile */
   .project-progress {
-    left: 12px;
-    gap: 10px;
+    top: 56px;
+    left: 14px;
+    right: auto;
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
 
     .progress-counter {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 2px;
+
       .current-step {
-        font-size: 18px;
+        font-size: 14px;
+      }
+      .step-separator {
+        font-size: 10px;
+        margin: 0;
       }
       .total-steps {
-        font-size: 11px;
+        font-size: 10px;
       }
     }
 
     .progress-track {
+      flex-direction: row;
+      gap: 4px;
+
       .progress-pip {
-        width: 4px;
-        height: 16px;
+        width: 12px;
+        height: 4px;
+        border-radius: 4px;
 
         &.active {
-          height: 24px;
+          width: 20px;
+          height: 4px;
         }
       }
     }
   }
 
+  /* Reposition navigation to top-right on mobile */
   .project-navigation {
-    right: 12px;
-    gap: 8px;
+    top: 50px;
+    right: 14px;
+    transform: none;
+    flex-direction: row;
+    gap: 6px;
 
     .nav-arrow-btn {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      min-height: 38px;
+      touch-action: manipulation;
 
       svg {
         width: 16px;
@@ -1125,17 +1216,39 @@
     }
   }
 
+  /* Timeline sits above mobile bottom dock */
   .experience-timeline.ui-mouse {
-    height: 90px;
+    bottom: 58px;
+    height: 50px;
+    z-index: 130;
+
+    .block {
+      display: none; // Hide mouse scroll cue on mobile touch devices
+    }
 
     .year {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 12px;
+      padding-right: 12px;
 
       .list {
+        margin-top: 2px;
+        min-height: 44px;
+        touch-action: manipulation;
+
+        &::after {
+          top: -10px;
+          width: 6px;
+          height: 6px;
+        }
+
         label {
           font-size: 10px;
+          max-width: 120px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
+
         p {
           font-size: 8px;
         }
@@ -1144,23 +1257,49 @@
   }
 
   .project-details-overlay {
-    padding: 12px;
+    padding: 10px;
 
     .project-details-modal {
       max-height: 92vh;
-      border-radius: 18px;
+      border-radius: 16px;
 
       .modal-header {
-        padding: 20px 20px 14px 20px;
+        padding: 16px 16px 12px 16px;
 
         .modal-project-title {
-          font-size: 22px;
+          font-size: 20px;
+        }
+
+        .modal-close-btn {
+          width: 44px;
+          height: 44px;
+          min-width: 44px;
+          min-height: 44px;
         }
       }
 
       .modal-body {
-        padding: 16px 20px 24px 20px;
-        gap: 18px;
+        padding: 14px 16px 20px 16px;
+        gap: 16px;
+      }
+    }
+  }
+}
+
+/* Very short height viewports (landscape phones / small screens) */
+@media (max-height: 640px) and (max-width: 767px) {
+  .project-epic {
+    max-height: calc(100vh - 165px);
+    min-height: 250px;
+    top: 51%;
+
+    .epic-content {
+      .epic-description {
+        -webkit-line-clamp: 1;
+      }
+
+      .epic-skills-preview {
+        display: none;
       }
     }
   }

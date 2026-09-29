@@ -1,46 +1,74 @@
 @import url("./color.scss");
 @import url("./font.scss");
-* {
+
+*,
+*::before,
+*::after {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
-  font-family: font-regular;
+  font-family: font-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
 }
+
 .ui-layout {
-  background-color: --bg-color;
+  background-color: var(--bg-color);
   color: var(--text-color);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
+
 code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-.container {
-}
+
+/* ==========================================================================
+   Responsive Container & Flex Grid
+   ========================================================================== */
 .container-fluid {
-  width: 1024px;
-  height: 100vh;
-  margin: 0px auto;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 80px 24px 80px 72px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
+
 .col {
   width: 100%;
-  height: 100%;
   display: flex;
+  flex-wrap: wrap;
+
   &.hori_center {
     align-items: center;
   }
+
   &.verti_center {
     justify-content: center;
   }
+
   .col-9 {
     width: 75%;
   }
@@ -60,126 +88,239 @@ code {
     width: 20%;
   }
 }
+
+/* ==========================================================================
+   Responsive Typography
+   ========================================================================== */
 .text {
   h1 {
-    font-size: 52px;
-    margin-bottom: 18px;
+    font-size: clamp(28px, 4.5vw, 52px);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    word-break: break-word;
   }
+
   p {
+    font-size: clamp(14px, 1.8vw, 16px);
     font-weight: 300;
-    line-height: 32px;
+    line-height: 1.65;
     color: var(--text-color);
-    opacity: 0.6;
-    margin: 25px 0px 45px 0px;
+    opacity: 0.8;
+    margin: 18px 0px 32px 0px;
   }
 }
-// Button Style starts //
+
+/* ==========================================================================
+   Buttons & Links
+   ========================================================================== */
 .btn-group {
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+
   label {
-    margin-right: 16px;
+    margin-right: 8px;
+    font-size: clamp(13px, 1.6vw, 15px);
   }
 }
+
 button {
   border: 0px;
-  padding: 15px 30px;
+  padding: 12px 24px;
+  min-height: 44px;
   border-radius: 4px;
-  margin-right: 6px;
-  font-family: font-medium;
-  // font-weight: 700;
-  white-space: nowrap;
-  word-wrap: break-word;
-  font-size: 16px;
-  display: flex;
+  font-family: font-medium, sans-serif;
+  font-size: clamp(14px, 1.8vw, 16px);
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  touch-action: manipulation;
+
   &.primary-btn {
     color: var(--btn-pri-text-white);
     background-color: var(--btn-pri-blue);
-    transition: all 0.6s ease-in;
+
     &:hover {
       background-color: var(--btn--pri-hover-black);
       color: var(--btn-pri-text-hover-white);
-      transition: all 0.6s ease-in;
     }
   }
+
   &.primary-btn-icon {
-    padding: 15px 20px 15px 30px;
+    padding: 12px 20px 12px 24px;
     color: var(--btn-pri-text-white);
     background-color: var(--btn-pri-blue);
-    transition: all 0.6s ease-in;
+
     svg {
-      margin-left: 6px;
-      width: 22px;
+      margin-left: 8px;
+      width: 20px;
       height: auto;
       path {
         fill: var(--btn-pri-text-white) !important;
       }
     }
+
     &:hover {
       background-color: var(--btn--pri-hover-black);
       color: var(--btn-pri-text-hover-white);
-      transition: all 0.6s ease-in;
-      svg {
-        path {
-          fill: var(--btn-pri-text-hover-white) !important;
-        }
+
+      svg path {
+        fill: var(--btn-pri-text-hover-white) !important;
       }
     }
   }
+
   &.secondary-btn {
     position: relative;
-    padding: 15px 20px 15px 30px;
+    padding: 12px 20px 12px 24px;
     background-color: var(--btn-sec-blue);
+    color: var(--text-color);
 
     &::after {
       display: block;
       content: "";
       width: 0%;
-      height: 0.5px;
+      height: 1px;
       background-color: var(--btn-tri-hover-blue);
       position: absolute;
-      bottom: 12px;
+      bottom: 8px;
       right: 10%;
       transition: all 0.3s ease-in;
     }
+
     &:hover::after {
       width: 80%;
       right: auto;
       left: 10%;
-      transition: all 0.3s ease-in;
     }
   }
 }
+
 a {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   background-color: var(--btn-icon-color);
   color: var(--btn-icon-text-color);
   border-radius: 50%;
-  margin-right: 10px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.6s ease-in;
-  &::after {
-    display: block;
-    content: "";
-    border-color: var(--btn-icon-color);
-  }
+  transition: all 0.3s ease;
+  text-decoration: none;
+
   &:hover {
-    transition: all 0.6s ease-in;
     background-color: var(--btn-icon-hover-color);
     color: var(--btn-icon-text-hover-color);
+
     svg path {
       fill: var(--btn-icon-color) !important;
     }
-    &::after {
-      border-color: var(--btn-icon-text-hover-color);
+  }
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints: Tablet (768px - 1023px)
+   ========================================================================== */
+@media (max-width: 1023px) {
+  .container-fluid {
+    padding: 70px 28px 90px 76px;
+  }
+
+  .col {
+    .col-9 {
+      width: 80%;
+    }
+    .col-8 {
+      width: 75%;
+    }
+    .col-6 {
+      width: 100%;
+    }
+    .col-4 {
+      width: 50%;
+    }
+    .col-3 {
+      width: 50%;
     }
   }
 }
+
+/* ==========================================================================
+   Responsive Breakpoints: Mobile (320px - 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .container-fluid {
+    padding: 68px 16px 88px 16px;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .col {
+    flex-direction: column;
+
+    .col-9,
+    .col-8,
+    .col-6,
+    .col-4,
+    .col-3,
+    .col-2 {
+      width: 100%;
+    }
+  }
+
+  .btn-group:not(.follow-me-group) {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+
+    button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .follow-me-group {
+    flex-direction: row !important;
+    align-items: center !important;
+    width: auto !important;
+
+    a {
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      min-height: 44px !important;
+      border-radius: 50% !important;
+    }
+  }
+}
+
+/* Universal text wrapping */
+h1, h2, h3, h4, h5, h6, p, label, span, a, button {
+  overflow-wrap: break-word;
+}
+
+/* Global Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Pointer visibility control */
 body:has(
     button:hover,
     a:hover,
@@ -191,3 +332,4 @@ body:has(
   opacity: 0;
   visibility: hidden;
 }
+

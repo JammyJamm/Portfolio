@@ -1,22 +1,18 @@
+import React, { useState } from "react";
 import "./style.scss";
-// import behance from "../assert/behance.svg";
-import { ReactComponent as Behance } from "../assert/behance.svg";
 import FollowMe from "../home/FollowMe";
-import { ReactComponent as ContactUS } from "../assert/contact-us.svg";
-import { ReactComponent as Virtual } from "../assert/virtual-assistants.svg";
-import { ReactComponent as Phone } from "../assert/smartphone.svg";
 import { ReactComponent as Icon } from "../assert/contact.svg";
-import { useState } from "react";
 import ChatBot from "../chatbot/Chatbot";
 
 const Contact = () => {
   const [showChatBot, setShowChatBot] = useState(false);
   const name = "Senthamil Munusamy";
-  console.log(name);
+
   const rotateName = name.split("").map((char, i) => {
     const rotationValue = i * 19 - 3;
     return (
       <span
+        key={i}
         style={{
           transform: `rotateZ(${rotationValue}deg)`,
         }}
@@ -28,71 +24,84 @@ const Contact = () => {
 
   return (
     <div className="ui-contact">
-      {/* <ContactUS style={{ width: "40px", height: "auto" }} />
-      <Phone style={{ width: "40px", height: "auto" }} />
-      <Virtual style={{ width: "40px", height: "auto" }} /> */}
-      <div className="container-fluid ">
+      <div className="container-fluid contact-fluid-wrap">
         <div className="mainLayout">
-          <div className="col hori_center">
-            <div className="col-3">
-              <div className="box">
-                <div className="circleText">
+          {/* Top Section */}
+          <div className="col hori_center contact-top-row">
+            <div className="col-3 contact-circle-col">
+              <div className="box circle-box">
+                <div className="circleText" aria-label="Senthamil Munusamy badge">
                   <p>{rotateName}</p>
                 </div>
               </div>
             </div>
+
             <div className="col-6 box-contact">
               <h1>Let's work together</h1>
               <p>
-                You can express yourself however you want and whenever you want,
-                for free. You can customize a template or make your own.
+                Available for intelligent AI application development, enterprise
+                frontend architecture, and modern UX design opportunities. Let's
+                collaborate to build something exceptional.
               </p>
             </div>
-            <div className="col-3 col verti_center hori_center">
+
+            <div className="col-3 contact-action-col">
               <div className="box">
                 <button
-                  className="btn-secondary"
+                  type="button"
+                  className="contact-say-hello-btn"
                   onClick={() => setShowChatBot(true)}
+                  aria-label="Open chat assistant"
                 >
-                  Say Hello
-                  <Icon width="26px" height="26px" />
+                  <span>Say Hello</span>
+                  <Icon width="22px" height="22px" aria-hidden="true" />
                 </button>
               </div>
             </div>
           </div>
-          <div className="col hori_center bottomText">
-            <div className="col-4">
-              <div className="box">
+
+          {/* Bottom Section */}
+          <div className="col hori_center bottomText contact-bottom-row">
+            <div className="col-4 contact-card-col">
+              <div className="box contact-meta-card">
                 <label>Call :</label>
                 <button
-                  className="secondary-btn"
+                  type="button"
+                  className="contact-link-btn"
                   onClick={() => (window.location.href = "tel:+917010314568")}
+                  aria-label="Call phone number +91 7010314568"
                 >
                   (+91) 7010314568
                 </button>
               </div>
             </div>
-            <div className="col-4">
-              <div className="box">
+
+            <div className="col-4 contact-card-col">
+              <div className="box contact-meta-card">
                 <label>Email :</label>
                 <button
-                  className="secondary-btn"
+                  type="button"
+                  className="contact-link-btn email-btn"
                   onClick={() =>
                     (window.location.href = "mailto:tamiltanish@gmail.com")
                   }
+                  aria-label="Send email to tamiltanish@gmail.com"
                 >
                   tamiltanish@gmail.com
                 </button>
               </div>
             </div>
-            <div className="col-4">
+
+            <div className="col-4 contact-card-col contact-social-col">
               <FollowMe />
             </div>
           </div>
         </div>
       </div>
+
       {showChatBot && <ChatBot onClose={() => setShowChatBot(false)} />}
     </div>
   );
 };
+
 export default Contact;

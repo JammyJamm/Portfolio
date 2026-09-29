@@ -36,9 +36,10 @@ const ProjectEpic = ({
     }
   };
 
-  // Preview only first 3 AI skills and first 4 Dev skills on the front card for clean visual balance
-  const previewAiSkills = (project.aiSkills || []).slice(0, 3);
-  const previewDevSkills = (project.devSkills || []).slice(0, 4);
+  const isMobile = viewportWidth < 768;
+  // Preview 2 AI and 2 Dev skills on mobile, and 3 AI / 4 Dev skills on larger screens for clean visual balance
+  const previewAiSkills = (project.aiSkills || []).slice(0, isMobile ? 2 : 3);
+  const previewDevSkills = (project.devSkills || []).slice(0, isMobile ? 2 : 4);
 
   return (
     <article

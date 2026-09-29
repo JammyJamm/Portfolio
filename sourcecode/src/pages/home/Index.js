@@ -7,12 +7,14 @@ import { ReactComponent as Icon } from "../assert/contact.svg";
 
 import { useState } from "react";
 import ChatBot from "../chatbot/Chatbot";
+
 const HomePage = () => {
   const [showChatBot, setShowChatBot] = useState(false);
+
   return (
     <div className="container-fluid ui-homepage green">
-      <div className="col hori_center">
-        <div className="col-6 text">
+      <div className="col hori_center home-layout-row">
+        <div className="col-6 text home-intro-col">
           <h1>Senthamil Munusamy</h1>
           <label className="job">AI Developer / UI Developer / UX Design</label>
           <p className="jobDescription">
@@ -21,15 +23,18 @@ const HomePage = () => {
             and building innovative solutions using modern AI tools and
             frameworks.
           </p>
-          <div className="btn-group">
+          <div className="btn-group home-btn-group">
             <button
+              type="button"
               className="primary-btn-icon"
               onClick={() => setShowChatBot(true)}
+              aria-label="Open chat assistant"
             >
               Say Hello
-              <Icon width="26px" height="26px" />
+              <Icon width="24px" height="24px" aria-hidden="true" />
             </button>
             <button
+              type="button"
               className="secondary-btn"
               onClick={() => {
                 const link = document.createElement("a");
@@ -39,19 +44,27 @@ const HomePage = () => {
                 link.click();
                 document.body.removeChild(link);
               }}
+              aria-label="Download CV as PDF"
             >
               Download CV
-              <img src={arrowImg} />
+              <img src={arrowImg} alt="" aria-hidden="true" />
             </button>
           </div>
           <FollowMe />
         </div>
+
         <div className="col-6 hreoImgBlock">
-          <img src={heroimg} alt="homepage" />
+          <img
+            src={heroimg}
+            alt="Senthamil Munusamy - Portfolio Hero"
+            className="hero-avatar-img"
+          />
         </div>
       </div>
+
       {showChatBot && <ChatBot onClose={() => setShowChatBot(false)} />}
     </div>
   );
 };
+
 export default HomePage;

@@ -145,6 +145,7 @@ export const calculateCardTransform = (
   // ==========================================
   if (offset === 0) {
     if (isMobile) {
+      // Mobile: Centered, 100% visible inside viewport
       return {
         transform: "translate3d(-50%, -50%, 0px) scale(1) rotateY(0deg)",
         opacity: 1,
@@ -156,8 +157,9 @@ export const calculateCardTransform = (
     }
 
     if (isTablet) {
-      const tx = isLeft ? "calc(-50% - 7vw)" : "calc(-50% + 7vw)";
-      const ry = isLeft ? 3.5 : -3.5;
+      // Tablet: Reduced depth and horizontal movement
+      const tx = isLeft ? "calc(-50% - 3.5vw)" : "calc(-50% + 3.5vw)";
+      const ry = isLeft ? 2.5 : -2.5;
       return {
         transform: `translate3d(${tx}, -50%, 0px) scale(1) rotateY(${ry}deg)`,
         opacity: 1,
@@ -168,9 +170,13 @@ export const calculateCardTransform = (
       };
     }
 
-    // Desktop
-    const tx = isLeft ? "calc(-50% - 15vw)" : "calc(-50% + 15vw)";
-    const ry = isLeft ? 5 : -5;
+    // Desktop: Smooth responsive horizontal offset (moderate at 1024-1280px, full at 1280px+)
+    const desktopShift = viewportWidth < 1280 ? 9 : 14;
+    const ryBase = viewportWidth < 1280 ? 4 : 5;
+    const tx = isLeft
+      ? `calc(-50% - ${desktopShift}vw)`
+      : `calc(-50% + ${desktopShift}vw)`;
+    const ry = isLeft ? ryBase : -ryBase;
     return {
       transform: `translate3d(${tx}, -50%, 0px) scale(1) rotateY(${ry}deg)`,
       opacity: 1,
@@ -189,9 +195,9 @@ export const calculateCardTransform = (
     const absOffset = Math.abs(offset);
 
     if (absOffset === 1) {
-      // Just exited project
-      const tz = isMobile ? 180 : isTablet ? 260 : 340;
-      const scale = isMobile ? 1.15 : isTablet ? 1.22 : 1.3;
+      // Just exited project: zooms forward into center and fades
+      const tz = isMobile ? 160 : isTablet ? 240 : 320;
+      const scale = isMobile ? 1.12 : isTablet ? 1.2 : 1.28;
       return {
         transform: `translate3d(-50%, -50%, ${tz}px) scale(${scale}) rotateY(0deg)`,
         opacity: 0,
@@ -203,8 +209,8 @@ export const calculateCardTransform = (
     }
 
     // Older exited projects
-    const tz = isMobile ? 320 : isTablet ? 450 : 580;
-    const scale = isMobile ? 1.25 : 1.45;
+    const tz = isMobile ? 280 : isTablet ? 400 : 520;
+    const scale = isMobile ? 1.2 : 1.4;
     return {
       transform: `translate3d(-50%, -50%, ${tz}px) scale(${scale}) rotateY(0deg)`,
       opacity: 0,
@@ -222,12 +228,12 @@ export const calculateCardTransform = (
   const depthLevel = Math.min(offset, 4);
 
   if (isMobile) {
-    // Simplified 3D vertical cascade on mobile to prevent going off-screen
-    const ty = `calc(-50% - ${depthLevel * 14}px)`;
-    const tz = -depthLevel * 85;
-    const scale = Math.max(0.68, 1 - offset * 0.09);
+    // Mobile: Simplified centered 3D vertical cascade behind active card
+    const ty = `calc(-50% - ${depthLevel * 10}px)`;
+    const tz = -depthLevel * 65;
+    const scale = Math.max(0.74, 1 - offset * 0.08);
     const opacity =
-      offset === 1 ? 0.65 : offset === 2 ? 0.35 : offset === 3 ? 0.15 : 0;
+      offset === 1 ? 0.6 : offset === 2 ? 0.3 : offset === 3 ? 0.12 : 0;
     const zIndex = 100 - offset * 10;
     const blur = offset * 0.8;
 
@@ -243,14 +249,15 @@ export const calculateCardTransform = (
   }
 
   if (isTablet) {
+    // Tablet: Reduced depth and gentle alternating horizontal tilt
     const sideMultiplier = isLeft ? -1 : 1;
-    const tx = `calc(-50% + ${sideMultiplier * (7 + depthLevel * 2)}vw)`;
-    const ty = `calc(-50% - ${depthLevel * 10}px)`;
-    const tz = -depthLevel * 150;
-    const scale = Math.max(0.6, 1 - offset * 0.12);
-    const ry = sideMultiplier * (3.5 + depthLevel * 0.8);
+    const tx = `calc(-50% + ${sideMultiplier * (3.5 + depthLevel * 1.5)}vw)`;
+    const ty = `calc(-50% - ${depthLevel * 8}px)`;
+    const tz = -depthLevel * 110;
+    const scale = Math.max(0.65, 1 - offset * 0.1);
+    const ry = sideMultiplier * (2.5 + depthLevel * 0.6);
     const opacity =
-      offset === 1 ? 0.65 : offset === 2 ? 0.38 : offset === 3 ? 0.18 : 0;
+      offset === 1 ? 0.65 : offset === 2 ? 0.36 : offset === 3 ? 0.16 : 0;
     const zIndex = 100 - offset * 10;
     const blur = offset * 1;
 
@@ -266,12 +273,14 @@ export const calculateCardTransform = (
   }
 
   // Desktop: Full 3D Cascade with alternating left/right positions
+  const desktopShift = viewportWidth < 1280 ? 9 : 14;
+  const ryBase = viewportWidth < 1280 ? 4 : 5;
   const sideMultiplier = isLeft ? -1 : 1;
-  const tx = `calc(-50% + ${sideMultiplier * (15 + depthLevel * 2.2)}vw)`;
+  const tx = `calc(-50% + ${sideMultiplier * (desktopShift + depthLevel * 2)}vw)`;
   const ty = `calc(-50% - ${depthLevel * 12}px)`;
   const tz = -depthLevel * 185;
   const scale = Math.max(0.55, 1 - offset * 0.13);
-  const ry = sideMultiplier * (5 + depthLevel * 1);
+  const ry = sideMultiplier * (ryBase + depthLevel * 0.9);
   const opacity =
     offset === 1 ? 0.65 : offset === 2 ? 0.38 : offset === 3 ? 0.18 : 0;
   const zIndex = 100 - offset * 10;

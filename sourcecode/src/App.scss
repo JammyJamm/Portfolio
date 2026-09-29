@@ -7,6 +7,7 @@
   pointer-events: none;
   transition: scale 0.4s ease-in;
   z-index: 9999;
+
   .ui-slowPointer {
     width: 36px;
     height: 36px;
@@ -15,6 +16,16 @@
     pointer-events: none;
   }
 }
+
+/* Hide custom cursor on mobile / tablet and touch devices */
+@media (pointer: coarse), (max-width: 1023px) {
+  .ui-pointer,
+  .ui-slowPointer {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
 body:has(
     button:hover,
     a:hover,
@@ -26,22 +37,24 @@ body:has(
   opacity: 0;
   visibility: hidden;
 }
-main {
-  pointer-events: none;
 
-  button,
-  a,
-  input,
-  textArea {
-    pointer-events: auto;
-  }
+main {
+  pointer-events: auto;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
   .form-element {
-    height: 76px;
+    height: auto;
+    min-height: 48px;
   }
 }
-main:hover ~ .ui-pointer {
-  scale: 12;
-  background-color: var(--yellow);
-  opacity: 0.6;
-  transition: scale 0.5s ease-in;
+
+@media (min-width: 1024px) and (pointer: fine) {
+  main:hover ~ .ui-pointer {
+    scale: 6;
+    background-color: var(--yellow);
+    opacity: 0.5;
+    transition: scale 0.4s ease-in;
+  }
 }

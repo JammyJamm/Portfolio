@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./style.scss";
 
 import { ReactComponent as AboutLanch } from "../assert/aboutLaunch.svg";
@@ -6,6 +6,7 @@ import { ReactComponent as Signature } from "../assert/signature.svg";
 
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const touchStartXRef = useRef(null);
 
   const slides = [
     {
@@ -63,7 +64,6 @@ const About = () => {
         </>
       ),
     },
-
     {
       title: "Industrial Activities",
       content: (
@@ -91,38 +91,58 @@ const About = () => {
   // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
+
+  const handleTouchStart = (e) => {
+    if (!e.touches || e.touches.length === 0) return;
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartXRef.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartXRef.current - touchEndX;
+    touchStartXRef.current = null;
+
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+  };
 
   return (
     <div className="ui-about">
       <div className="container-fluid">
-        <div className="col hori_center">
-          {/* Experience */}
+        <div className="col hori_center about-layout-row">
+          {/* Experience Year Box */}
           <div className="col-6 experience">
-            <div className="box">
+            <div className="box experience-years-box">
               <b>9</b>
-              <label>Year of Experience</label>
+              <label>Years of Experience</label>
 
               <AboutLanch
-                width="50px"
-                style={{
-                  position: "absolute",
-                  top: "0px",
-                  right: "-100px",
-                }}
+                className="about-launch-icon"
+                aria-hidden="true"
               />
             </div>
           </div>
 
-          {/* About */}
-          <div className="col-6 text">
+          {/* About Me Content */}
+          <div className="col-6 text about-text-col">
             <h1>About Me</h1>
 
-            <div className="about-carousel">
+            <div
+              className="about-carousel"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               <div
                 className="carousel-track"
                 style={{
@@ -140,18 +160,20 @@ const About = () => {
 
             {/* Carousel Controls */}
             <div className="carousel-controls">
-              {/* <button
+              <button
+                type="button"
                 className="carousel-btn"
                 onClick={prevSlide}
                 aria-label="Previous slide"
               >
                 ‹
-              </button> */}
+              </button>
 
               <div className="carousel-dots">
                 {slides.map((_, index) => (
                   <button
                     key={index}
+                    type="button"
                     className={`dot ${currentSlide === index ? "active" : ""}`}
                     onClick={() => setCurrentSlide(index)}
                     aria-label={`Go to slide ${index + 1}`}
@@ -159,29 +181,28 @@ const About = () => {
                 ))}
               </div>
 
-              {/* <span>
-                {currentSlide + 1} / {slides.length}
-              </span> */}
-
-              {/* <button
+              <button
+                type="button"
                 className="carousel-btn"
                 onClick={nextSlide}
                 aria-label="Next slide"
               >
                 ›
-              </button> */}
+              </button>
             </div>
 
-            {/* Contact */}
-            <div className="btn-group signature">
+            {/* Contact & Signature */}
+            <div className="btn-group signature about-signature-group">
               <button
-                className="btn-secondary"
+                type="button"
+                className="secondary-btn"
                 onClick={() => (window.location.href = "tel:+917010314568")}
+                aria-label="Contact by phone"
               >
                 Contact me
               </button>
 
-              <Signature width="300px" />
+              <Signature className="signature-svg" aria-label="Senthamil Signature" />
             </div>
           </div>
         </div>

@@ -1,20 +1,62 @@
 .logo {
   position: fixed;
-  left: 18px;
-  top: 32px;
+  left: 20px;
+  top: 24px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
   pointer-events: all;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  touch-action: manipulation;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--nav-bg-active, #ffc448);
+    outline-offset: 3px;
+  }
 
   svg {
+    width: 42px;
+    height: 42px;
     pointer-events: none;
 
     path {
-      fill: var(--nav-bg-active);
+      fill: var(--nav-bg-active, #ffc448);
     }
   }
 }
 
-.ui-experience + .logo svg path {
+.ui-experience + .logo svg path,
+.ui-layout:has(.ui-experience) .logo svg path {
   fill: #000;
 }
+
+@media (max-width: 1023px) {
+  .logo {
+    left: 18px;
+    top: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    left: 14px;
+    top: 14px;
+    width: 44px;
+    height: 44px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+

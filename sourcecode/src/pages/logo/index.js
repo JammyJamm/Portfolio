@@ -9,9 +9,24 @@ const LogoImg = () => {
     navigate("/");
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      navigate("/");
+    }
+  };
+
   return (
-    <div className="logo" onClick={handleLogoClick} role="button" tabIndex={0}>
-      <Logo />
+    <div
+      className="logo"
+      onClick={handleLogoClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label="Go to home page"
+      title="Senthamil Munusamy Portfolio"
+    >
+      <Logo aria-hidden="true" />
     </div>
   );
 };

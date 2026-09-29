@@ -107,4 +107,65 @@ describe("Experience Schema & 3D Depth Utilities", () => {
     expect(reducedDepth.opacity).toBe(0);
     expect(reducedDepth.visibility).toBe("hidden");
   });
+
+  describe("Responsive Breakpoints & Layout Adaptations", () => {
+    const mobileWidths = [320, 375, 390, 480];
+    const tabletWidths = [768, 1023];
+    const desktopWidths = [1024, 1280, 1440];
+
+    mobileWidths.forEach((width) => {
+      test(`Mobile at ${width}px keeps active card centered without horizontal offset or tilt`, () => {
+        const style = calculateCardTransform(0, 0, width, false);
+        expect(style.opacity).toBe(1);
+        expect(style.zIndex).toBe(100);
+        // Mobile must center horizontally: -50% and 0deg tilt
+        expect(style.transform).toContain("-50%, -50%");
+        expect(style.transform).toContain("rotateY(0deg)");
+        expect(style.transform).toContain("scale(1)");
+      });
+
+      test(`Mobile at ${width}px stacks upcoming cards vertically in 3D depth without going off-screen`, () => {
+        const depth1 = calculateCardTransform(1, 1, width, false);
+        expect(depth1.opacity).toBeGreaterThan(0);
+        expect(depth1.transform).toContain("rotateY(0deg)");
+        expect(depth1.transform).toContain("-50%");
+        expect(depth1.zIndex).toBeLessThan(100);
+      });
+    });
+
+    tabletWidths.forEach((width) => {
+      test(`Tablet at ${width}px uses reduced horizontal movement and reduced depth tilt`, () => {
+        const leftStyle = calculateCardTransform(0, 0, width, false);
+        const rightStyle = calculateCardTransform(0, 1, width, false);
+
+        // Tablet uses reduced ±3.5vw shift instead of 14-15vw
+        expect(leftStyle.transform).toContain("3.5vw");
+        expect(rightStyle.transform).toContain("3.5vw");
+
+        // Tablet uses reduced tilt ±2.5deg
+        expect(leftStyle.transform).toContain("2.5deg");
+        expect(rightStyle.transform).toContain("-2.5deg");
+      });
+    });
+
+    desktopWidths.forEach((width) => {
+      test(`Desktop at ${width}px preserves 3D depth effect and alternating decks`, () => {
+        const leftDeck = calculateCardTransform(0, 0, width, false);
+        const rightDeck = calculateCardTransform(0, 1, width, false);
+
+        expect(leftDeck.opacity).toBe(1);
+        expect(rightDeck.opacity).toBe(1);
+
+        // Alternating positions
+        expect(leftDeck.transform).toContain("-");
+        expect(rightDeck.transform).toContain("+");
+
+        // Upcoming depth
+        const upcoming = calculateCardTransform(1, 1, width, false);
+        expect(upcoming.opacity).toBeLessThan(1);
+        expect(upcoming.transform).toContain("scale(");
+      });
+    });
+  });
 });
+

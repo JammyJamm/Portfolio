@@ -5,7 +5,6 @@ import { ReactComponent as File } from "../assert/file.svg";
 import { ReactComponent as Hand } from "../assert/hand.svg";
 import { ReactComponent as Mail } from "../assert/mail.svg";
 import { ReactComponent as Call } from "../assert/call.svg";
-import Contact from "../contact/Index";
 
 const ChatBot = ({ onClose }) => {
   const [messages, setMessages] = useState([
@@ -67,16 +66,21 @@ const ChatBot = ({ onClose }) => {
   };
 
   return (
-    <div className="chatbot">
+    <div className="chatbot" role="dialog" aria-modal="true" aria-label="Chat assistant">
       <div className="chatbot-header">
         <div>
-          <strong style={{ display: "flex" }}>
-            Let's Connect <Hand className="hand" />
+          <strong style={{ display: "flex", alignItems: "center" }}>
+            Let's Connect <Hand className="hand" aria-hidden="true" />
           </strong>
           <span>I'm here to help</span>
         </div>
 
-        <button className="chatbot-close" onClick={onClose}>
+        <button
+          className="chatbot-close"
+          onClick={onClose}
+          aria-label="Close chat assistant"
+          type="button"
+        >
           ×
         </button>
       </div>
