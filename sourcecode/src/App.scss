@@ -43,7 +43,8 @@ main {
   pointer-events: none;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 
   .form-element {
     height: auto;
@@ -69,11 +70,15 @@ main input,
 main textArea {
   pointer-events: auto;
 }
-@media (min-width: 1024px) and (pointer: fine) {
-  main:hover ~ .ui-pointer {
-    scale: 6;
-    background-color: var(--yellow);
-    opacity: 0.5;
-    transition: scale 0.4s ease-in;
+@media (max-width: 1024px) and (pointer: fine) {
+  main {
+    height: auto;
+    overflow: auto;
+    &:hover ~ .ui-pointer {
+      scale: 6;
+      background-color: var(--yellow);
+      opacity: 0.5;
+      transition: scale 0.4s ease-in;
+    }
   }
 }
