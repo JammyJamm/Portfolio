@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9502d10.css",
-    "main.js": "/static/js/main.55503520.js",
+    "main.css": "/static/css/main.a35706b3.css",
+    "main.js": "/static/js/main.7ae4a65e.js",
     "static/js/27.4b881fd5.chunk.js": "/static/js/27.4b881fd5.chunk.js",
     "static/media/SenthamilResume.pdf": "/static/media/SenthamilResume.d8d3fe88d2f52a52f3ff.pdf",
     "static/media/heroImg.png": "/static/media/heroImg.dfbccb701379dab9a651.png",
@@ -30,7 +30,7 @@
     "static/media/arrow.svg": "/static/media/arrow.69600b996793906d3a4a99c6b5e25446.svg"
   },
   "entrypoints": [
-    "static/css/main.c9502d10.css",
-    "static/js/main.55503520.js"
+    "static/css/main.a35706b3.css",
+    "static/js/main.7ae4a65e.js"
   ]
 }
