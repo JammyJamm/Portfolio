@@ -100,7 +100,9 @@
     border-radius: 50px;
     font-size: 16px;
     font-weight: 700;
-    transition: transform 0.25s ease, background 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease;
 
     &:hover {
       background: #ffffff;
@@ -126,7 +128,7 @@
 
     .contact-meta-card {
       display: flex;
-      flex-direction: column;
+      align-items: center;
       gap: 6px;
 
       label {
@@ -291,4 +293,3 @@
     animation: none !important;
   }
 }
-
