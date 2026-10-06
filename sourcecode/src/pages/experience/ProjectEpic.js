@@ -21,7 +21,7 @@ const ProjectEpic = ({
     offset,
     index,
     viewportWidth,
-    isReducedMotion
+    isReducedMotion,
   );
 
   const formattedIndex = String(index + 1).padStart(2, "0");
@@ -63,28 +63,33 @@ const ProjectEpic = ({
         <div className="epic-header">
           <div className="epic-num-group">
             <span className="epic-number">{formattedIndex}</span>
-            <span className="epic-total">/ {String(total).padStart(2, "0")}</span>
+            <span className="epic-total">
+              / {String(total).padStart(2, "0")}
+            </span>
           </div>
 
           <div className="epic-badges-group">
             {project.year && (
               <span className="epic-badge year-badge">{project.year}</span>
             )}
-            <span className="epic-badge side-badge">
+            {/* <span className="epic-badge side-badge">
               {isLeft ? "Left Deck" : "Right Deck"}
-            </span>
+            </span> */}
           </div>
         </div>
 
         {/* Company & Role Meta */}
         <div className="epic-company-bar">
           <span className="epic-org-name">{project.organization}</span>
-          {project.role && <span className="epic-role-name"> &bull; {project.role}</span>}
+          {project.role && (
+            <span className="epic-role-name"> &bull; {project.role}</span>
+          )}
         </div>
 
         {project.duration && (
           <span className="epic-duration-meta">
-            {project.duration} {project.location ? `&bull; ${project.location}` : ""}
+            {project.duration}{" "}
+            {project.location ? `&bull; ${project.location}` : ""}
           </span>
         )}
 
@@ -171,7 +176,9 @@ const ProjectEpic = ({
             </>
           ) : (
             <div className="epic-depth-hint">
-              <span>{isInteractive ? "Click to bring forward" : "In depth"}</span>
+              <span>
+                {isInteractive ? "Click to bring forward" : "In depth"}
+              </span>
             </div>
           )}
         </div>

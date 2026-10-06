@@ -7,19 +7,15 @@ const ExperienceHeader = ({ activeProject, totalProjects, activeIndex }) => {
         <span className="header-tag">Experience &amp; Work</span>
         <div className="header-active-context">
           {activeProject?.organization && (
-            <span className="header-org">
-              {activeProject.organization}
-            </span>
+            <span className="header-org">{activeProject.organization}</span>
           )}
           {activeProject?.role && (
-            <span className="header-role">
-              {" "}&bull; {activeProject.role}
-            </span>
+            <span className="header-role"> &bull; {activeProject.role}</span>
           )}
         </div>
       </div>
 
-      <div className="header-instruction">
+      {/* <div className="header-instruction">
         <span className="instruction-badge">
           <svg
             className="instruction-icon"
@@ -37,7 +33,7 @@ const ExperienceHeader = ({ activeProject, totalProjects, activeIndex }) => {
           </svg>
           Scroll or swipe to explore
         </span>
-      </div>
+      </div> */}
     </header>
   );
 };

@@ -506,6 +506,7 @@
     .progress-pip {
       width: 6px;
       height: 24px;
+      min-height: 24px;
       border-radius: 10px;
       background: rgba(18, 20, 29, 0.2);
       transition: all 0.3s ease;
@@ -641,7 +642,7 @@
         background-color: #ffffff;
         border-radius: 50px;
         position: absolute;
-        top: -15px;
+        top: -18px;
         transition:
           transform 0.3s ease,
           background-color 0.3s ease,
@@ -706,7 +707,9 @@
     align-items: center;
     flex-direction: column;
     margin-top: 6px;
-
+    position: fixed;
+    right: 0px;
+    top: 0px;
     .wheel {
       width: 18px;
       height: 28px;
@@ -732,8 +735,8 @@
       margin-top: 5px;
       color: #ffffff;
       font-size: 9px;
-      font-family: font-medium, sans-serif;
-      text-transform: uppercase;
+      // font-family: font-, sans-serif;
+      text-transform: Capitalize;
       letter-spacing: 2px;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
