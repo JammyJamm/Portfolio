@@ -74,7 +74,7 @@ main textArea {
   main {
     height: auto;
     overflow: auto;
-    margin-bottom: 100px;
+    padding-bottom: 200px;
     &:hover ~ .ui-pointer {
       scale: 6;
       background-color: var(--yellow);
