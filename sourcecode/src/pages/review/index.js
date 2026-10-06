@@ -48,7 +48,7 @@ const Review = () => {
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prev) => (prev - 1 + reviewData.length) % reviewData.length
+      (prev) => (prev - 1 + reviewData.length) % reviewData.length,
     );
   };
 
@@ -89,7 +89,7 @@ const Review = () => {
         <div className="review-main-col">
           {/* Section Heading */}
           <div className="review-heading-wrap text">
-            <h1>Valuable Feedback from My Managers</h1>
+            <h2>Valuable Feedback from My Managers</h2>
           </div>
 
           {/* Active Review Card */}
@@ -114,7 +114,9 @@ const Review = () => {
                 <span className="author-name">{activeReview.name}</span>
                 <span className="author-company">{activeReview.company}</span>
                 {activeReview.project && (
-                  <span className="author-projects">{activeReview.project}</span>
+                  <span className="author-projects">
+                    {activeReview.project}
+                  </span>
                 )}
               </div>
             </div>
