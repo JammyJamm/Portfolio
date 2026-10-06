@@ -139,7 +139,7 @@
         transition: all 0.3s ease;
         position: relative;
         touch-action: manipulation;
-
+        min-height: 8px;
         &::after {
           content: "";
           position: absolute;
@@ -214,4 +214,3 @@
     animation: none !important;
   }
 }
-

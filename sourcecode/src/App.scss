@@ -23,6 +23,7 @@
   .ui-slowPointer {
     display: none !important;
     visibility: hidden !important;
+    transition: scale 0.4s ease-in;
   }
 }
 
@@ -34,12 +35,12 @@ body:has(
     input[type="button"]:hover
   )
   .ui-slowPointer {
-  opacity: 0;
-  visibility: hidden;
+  display: none !important;
+  visibility: hidden !important;
 }
 
 main {
-  pointer-events: auto;
+  pointer-events: none;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -48,8 +49,26 @@ main {
     height: auto;
     min-height: 48px;
   }
-}
+  &:hover ~ .ui-pointer {
+    background-color: var(--yellow);
+    opacity: 0.6;
+    scale: 12;
+    transition: scale 0.5s ease-in;
+    .ui-slowPointer {
+      opacity: 0;
+      scale: 0;
 
+      display: none !important;
+      visibility: hidden !important;
+    }
+  }
+}
+main a,
+main button,
+main input,
+main textArea {
+  pointer-events: auto;
+}
 @media (min-width: 1024px) and (pointer: fine) {
   main:hover ~ .ui-pointer {
     scale: 6;
