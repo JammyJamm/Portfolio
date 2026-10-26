@@ -1,4 +1,10 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "react";
 import ExperienceHeader from "./ExperienceHeader";
 import ExperienceTimeline from "./ExperienceTimeline";
 import ProjectCascade from "./ProjectCascade";
@@ -25,7 +31,7 @@ const ExperienceContainer = ({ epic = [] }) => {
 
   // Responsive and accessibility state
   const [viewportWidth, setViewportWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1200
+    typeof window !== "undefined" ? window.innerWidth : 1200,
   );
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
@@ -109,7 +115,7 @@ const ExperienceContainer = ({ epic = [] }) => {
         setIsAnimating(false);
       }, ANIMATION_DURATION_MS);
     },
-    [projects]
+    [projects],
   );
 
   const nextProject = useCallback(() => {
@@ -130,13 +136,13 @@ const ExperienceContainer = ({ epic = [] }) => {
   const handleSelectCompany = useCallback(
     (companyIndex) => {
       const targetIdx = projects.findIndex(
-        (p) => p.companyIndex === companyIndex
+        (p) => p.companyIndex === companyIndex,
       );
       if (targetIdx !== -1) {
         goToProject(targetIdx);
       }
     },
-    [projects, goToProject]
+    [projects, goToProject],
   );
 
   // Open/Close project details case study modal
@@ -224,7 +230,11 @@ const ExperienceContainer = ({ epic = [] }) => {
 
       if (isDetailsOpenRef.current) return;
 
-      if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "PageDown") {
+      if (
+        e.key === "ArrowDown" ||
+        e.key === "ArrowRight" ||
+        e.key === "PageDown"
+      ) {
         if (activeIndexRef.current < projects.length - 1) {
           e.preventDefault();
           nextProject();
@@ -266,7 +276,8 @@ const ExperienceContainer = ({ epic = [] }) => {
 
   const handleTouchEnd = (e) => {
     if (isDetailsOpenRef.current) return;
-    if (touchStartYRef.current === null || touchStartXRef.current === null) return;
+    if (touchStartYRef.current === null || touchStartXRef.current === null)
+      return;
 
     const touchEndY = e.changedTouches[0].clientY;
     const touchEndX = e.changedTouches[0].clientX;
@@ -353,13 +364,13 @@ const ExperienceContainer = ({ epic = [] }) => {
       />
 
       {/* Experience Timeline & Scroll Hint */}
-      <ExperienceTimeline
+      {/* <ExperienceTimeline
         epic={epic}
         currentCompanyIndex={currentCompanyIndex}
         activeIndex={activeIndex}
         totalProjects={projects.length}
         onSelectCompany={handleSelectCompany}
-      />
+      /> */}
 
       {/* Case Study Details Modal / Drawer */}
       <ProjectDetails
