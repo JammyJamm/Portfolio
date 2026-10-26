@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.4dc8d159.css",
-    "main.js": "/Portfolio/static/js/main.6a51cf40.js",
+    "main.js": "/Portfolio/static/js/main.8d49247c.js",
     "static/js/27.4b881fd5.chunk.js": "/Portfolio/static/js/27.4b881fd5.chunk.js",
     "static/media/SenthamilResume.pdf": "/Portfolio/static/media/SenthamilResume.d8d3fe88d2f52a52f3ff.pdf",
     "static/media/heroImg.png": "/Portfolio/static/media/heroImg.dfbccb701379dab9a651.png",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.4dc8d159.css",
-    "static/js/main.6a51cf40.js"
+    "static/js/main.8d49247c.js"
   ]
 }
