@@ -63,8 +63,53 @@
   }
 }
 
+.interview-shortcut {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: var(--nav-bg, #6244c5);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(18, 20, 29, 0.22);
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: var(--nav-bg-active, #ffc448);
+    color: var(--black, #12141d);
+  }
+
+  &.active {
+    background: var(--nav-bg-active, #ffc448);
+    color: var(--black, #12141d);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--nav-bg-active, #ffc448);
+    outline-offset: 3px;
+  }
+
+  svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+}
+
 /* Mobile Screen Breakpoint (320px - 767px): Convert to bottom floating bar */
 @media (max-width: 767px) {
+  .interview-shortcut {
+    bottom: 76px;
+    left: 14px;
+  }
+
   .ui-nav {
     top: auto;
     bottom: 12px;
@@ -124,4 +169,3 @@
     }
   }
 }
-

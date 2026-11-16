@@ -68,6 +68,29 @@ const Layout = () => {
           </li>
         </ul>
       </nav>
+      <Link
+        to="/interview"
+        className={`interview-shortcut${currentPath === "/interview" ? " active" : ""}`}
+        aria-label="Interview questions and answers"
+        aria-current={currentPath === "/interview" ? "page" : undefined}
+        title="Interview Q&A"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="22"
+          height="22"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+          <path
+            d="M12 11v5m0-8h.01"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </Link>
       <Outlet />
       <LogoImg />
       <Available />

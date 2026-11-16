@@ -1,0 +1,476 @@
+[
+  {
+    "id": "about-me",
+    "category": "Introduction",
+    "question": "Can you tell me about yourself?",
+    "answer": "I'm a multidisciplinary technology professional specializing in UX design, UI development, React.js, Node.js, and Agentic AI development. I have 9+ years of experience creating user-centered digital experiences and 4+ years of hands-on React development experience. My expertise includes understanding business requirements, designing intuitive user experiences, developing responsive interfaces, building reusable components, creating backend APIs, and developing AI-powered applications. I enjoy working across the complete product development lifecycle, combining design thinking with modern engineering practices."
+  },
+  {
+    "id": "professional-strengths",
+    "category": "Introduction",
+    "question": "What are your key strengths?",
+    "answer": "My key strengths include problem-solving, design thinking, frontend development, technical collaboration, and continuous learning. I can understand a product from both the user's perspective and the engineering perspective. I enjoy converting complex requirements into simple user experiences and maintainable technical solutions."
+  },
+  {
+    "id": "javascript-closures",
+    "category": "JavaScript",
+    "question": "What are closures in JavaScript?",
+    "answer": "A closure is created when a function remembers variables from its outer lexical scope even after the outer function has finished executing. Closures are useful for data privacy, maintaining state, callbacks, and function factories. For example, a counter function can maintain a private variable and expose methods to increment and retrieve its value."
+  },
+  {
+    "id": "javascript-hoisting",
+    "category": "JavaScript",
+    "question": "What is hoisting in JavaScript?",
+    "answer": "Hoisting is JavaScript's behavior of processing declarations before executing code within their scope. Function declarations can generally be called before their definition. Variables declared with var are hoisted and initialized with undefined, while let and const are hoisted but remain in the temporal dead zone until their declarations are evaluated."
+  },
+  {
+    "id": "javascript-var-let-const",
+    "category": "JavaScript",
+    "question": "What is the difference between var, let, and const?",
+    "answer": "Var is function-scoped and can be redeclared. Let is block-scoped and can be reassigned but not redeclared in the same scope. Const is also block-scoped and cannot be reassigned after initialization. However, objects and arrays declared with const can still have their internal properties or elements modified."
+  },
+  {
+    "id": "javascript-event-loop",
+    "category": "JavaScript",
+    "question": "Can you explain the JavaScript event loop?",
+    "answer": "The event loop coordinates synchronous JavaScript execution with asynchronous callbacks. JavaScript executes the current call stack first. Once the stack is empty, microtasks such as Promise callbacks are processed before the next task from the task queue. The event loop continues coordinating these queues so asynchronous operations can be handled without blocking normal execution."
+  },
+  {
+    "id": "javascript-promises",
+    "category": "JavaScript",
+    "question": "What are Promises in JavaScript?",
+    "answer": "A Promise represents the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected. I use then, catch, and finally to handle Promise results, or async/await to write asynchronous code in a more readable way. Promises are commonly used for API requests, file operations, and other asynchronous workflows."
+  },
+  {
+    "id": "javascript-async-await",
+    "category": "JavaScript",
+    "question": "What is the difference between async/await and Promises?",
+    "answer": "Async/await is syntax built on top of Promises. Both handle asynchronous operations, but async/await makes the code easier to read and maintain by allowing asynchronous logic to look similar to synchronous code. I use try/catch for error handling with async/await and Promise methods such as Promise.all when multiple operations need to run concurrently."
+  },
+  {
+    "id": "javascript-promise-all",
+    "category": "JavaScript",
+    "question": "What is the difference between Promise.all, Promise.allSettled, and Promise.race?",
+    "answer": "Promise.all resolves when all promises fulfill and rejects as soon as one rejects. Promise.allSettled waits until every promise settles and returns each result's status. Promise.race settles as soon as the first promise settles, whether fulfilled or rejected. I choose the method depending on whether the workflow requires all successful results, individual outcomes, or the first completed result."
+  },
+  {
+    "id": "javascript-this",
+    "category": "JavaScript",
+    "question": "What does the this keyword mean in JavaScript?",
+    "answer": "The value of this depends primarily on how a function is called. In an object method, it generally refers to the object used to call the method. In a regular function, its value depends on the invocation context and strict mode. Arrow functions do not have their own this; they inherit it from the surrounding lexical scope. Understanding this is important when working with callbacks, event handlers, and object methods."
+  },
+  {
+    "id": "javascript-arrow-functions",
+    "category": "JavaScript",
+    "question": "What is the difference between regular functions and arrow functions?",
+    "answer": "Arrow functions provide shorter syntax and inherit this from their surrounding lexical scope. Regular functions have their own this depending on how they are called, can be used as constructors with new, and have an arguments object. Arrow functions cannot be used as constructors and do not have their own arguments object. I choose between them based on the required behavior."
+  },
+  {
+    "id": "javascript-scope",
+    "category": "JavaScript",
+    "question": "What is the difference between global scope, function scope, and block scope?",
+    "answer": "Global scope makes declarations accessible throughout their relevant global environment. Function scope restricts variables to the function where they are declared, as with var. Block scope restricts variables to a block such as an if statement or loop, as with let and const. I prefer block-scoped declarations because they reduce accidental variable access and improve maintainability."
+  },
+  {
+    "id": "javascript-prototype",
+    "category": "JavaScript",
+    "question": "What is prototypal inheritance in JavaScript?",
+    "answer": "JavaScript uses prototypal inheritance, where objects can inherit properties and methods from other objects through their prototype chain. When a property is not found directly on an object, JavaScript searches its prototype chain. This enables shared behavior and object reuse. Classes in JavaScript provide a more familiar syntax over the prototype-based system."
+  },
+  {
+    "id": "javascript-map-set",
+    "category": "JavaScript",
+    "question": "What is the difference between Map, Set, and regular objects?",
+    "answer": "Objects primarily store key-value properties, usually with string or symbol keys. Map stores key-value pairs and supports keys of any type while preserving insertion order. Set stores unique values and prevents duplicates. I use objects for structured records, Map for dynamic key-value collections, and Set when uniqueness or fast membership checks are important."
+  },
+  {
+    "id": "javascript-debounce-throttle",
+    "category": "JavaScript",
+    "question": "What is the difference between debounce and throttle?",
+    "answer": "Debouncing delays function execution until a specified period has passed without another event. Throttling limits function execution to at most once within a specified interval. I use debounce for search inputs and autocomplete requests, and throttle for frequent events such as scroll and resize handling."
+  },
+  {
+    "id": "javascript-deep-shallow-copy",
+    "category": "JavaScript",
+    "question": "What is the difference between shallow copy and deep copy?",
+    "answer": "A shallow copy creates a new outer object but retains references to nested objects. A deep copy creates independent copies of nested data as well. Spread syntax and Object.assign create shallow copies. structuredClone can create deep copies of supported values. I choose the appropriate copying strategy to avoid unintended shared-state mutations."
+  },
+  {
+    "id": "javascript-equality",
+    "category": "JavaScript",
+    "question": "What is the difference between == and ===?",
+    "answer": "The == operator performs loose equality and may convert values before comparing them. The === operator performs strict equality without type coercion. For example, 5 == '5' returns true, while 5 === '5' returns false. I generally prefer strict equality to avoid unexpected type conversions."
+  },
+  {
+    "id": "javascript-es6",
+    "category": "JavaScript",
+    "question": "What are the important ES6+ features you use?",
+    "answer": "I regularly use let and const, arrow functions, template literals, destructuring, spread and rest operators, modules, classes, Promises, async/await, optional chaining, nullish coalescing, and array methods. These features help write cleaner, more readable, and maintainable JavaScript applications."
+  },
+  {
+    "id": "javascript-memory",
+    "category": "JavaScript",
+    "question": "How does garbage collection work in JavaScript?",
+    "answer": "JavaScript engines automatically manage memory, primarily using reachability-based garbage collection. Objects that can no longer be reached from active references can be collected. Memory leaks can still happen when references are unintentionally retained, such as uncleared timers, event listeners, or unnecessary global references. I clean up resources and avoid retaining objects longer than necessary."
+  },
+  {
+    "id": "typescript-fundamentals",
+    "category": "TypeScript",
+    "question": "What is TypeScript, and why do you use it?",
+    "answer": "TypeScript is a strongly typed programming language built on JavaScript that adds static type checking and development-time tooling. I use it to define interfaces, types, function contracts, component props, and API response structures. It helps identify potential errors earlier, improves editor support, and makes large applications easier to maintain."
+  },
+  {
+    "id": "typescript-interface-type",
+    "category": "TypeScript",
+    "question": "What is the difference between interface and type in TypeScript?",
+    "answer": "Both interface and type can describe object shapes. Interfaces support declaration merging and are commonly used for object contracts. Type aliases can represent unions, intersections, primitives, tuples, and more complex type expressions. I use either based on the design requirements and maintain consistency across the codebase."
+  },
+  {
+    "id": "typescript-generics",
+    "category": "TypeScript",
+    "question": "What are generics in TypeScript?",
+    "answer": "Generics allow reusable functions, classes, and interfaces to work with different data types while maintaining type safety. For example, I can create a reusable API response type such as ApiResponse<T>, where T represents the response data type. Generics help avoid duplicated code while preserving accurate type information."
+  },
+  {
+    "id": "ux-design-process",
+    "category": "UX/UI Design",
+    "question": "Can you explain your end-to-end UX design process?",
+    "answer": "I begin by understanding business objectives, target users, and the problem statement. I conduct research, identify user pain points, and define user journeys and information architecture. Next, I create user flows, wireframes, and interactive prototypes, followed by high-fidelity UI designs. I validate the experience through usability testing and stakeholder feedback, then collaborate with developers during implementation and review the final product."
+  },
+  {
+    "id": "user-research",
+    "category": "UX/UI Design",
+    "question": "How do you conduct user research?",
+    "answer": "I first define the research objectives and questions. Depending on the project, I use user interviews, surveys, stakeholder discussions, competitor analysis, analytics, and usability testing. I identify recurring user problems and behavioral patterns, synthesize the findings, and translate them into actionable design recommendations."
+  },
+  {
+    "id": "ux-metrics",
+    "category": "UX/UI Design",
+    "question": "How do you measure the success of a UX design?",
+    "answer": "I evaluate UX success using both qualitative and quantitative metrics. These can include task completion rate, time on task, error rate, conversion rate, user satisfaction, retention, and usability feedback. I select metrics based on the product goals and use the findings to identify areas for improvement."
+  },
+  {
+    "id": "design-thinking",
+    "category": "UX/UI Design",
+    "question": "What is design thinking?",
+    "answer": "Design thinking is a human-centered approach to problem-solving. Its commonly described stages are empathize, define, ideate, prototype, and test. I use this approach to understand real user needs, explore possible solutions, validate assumptions early, and reduce the risk of building features that do not solve the actual problem."
+  },
+  {
+    "id": "design-systems",
+    "category": "UX/UI Design",
+    "question": "What is a design system, and how do you build one?",
+    "answer": "A design system is a collection of reusable design standards, components, patterns, and guidelines. I start with design tokens such as colors, typography, spacing, and border radii. Then I define reusable components, interaction states, accessibility guidelines, and documentation. I collaborate with developers to ensure Figma components and coded components remain consistent."
+  },
+  {
+    "id": "figma-to-code",
+    "category": "UI Development",
+    "question": "How do you convert Figma designs into production-ready code?",
+    "answer": "I review the Figma file, identify reusable components, understand design specifications, and examine responsive behavior. I translate design tokens into CSS variables or a shared styling system, implement components using semantic HTML, CSS, and React, and validate the result against the original design. I also test interactions, accessibility, and different screen sizes."
+  },
+  {
+    "id": "responsive-accessible",
+    "category": "UI Development",
+    "question": "How do you build responsive and accessible interfaces?",
+    "answer": "I use flexible layouts, CSS Grid, Flexbox, relative units, and appropriate media queries to support different screen sizes. For accessibility, I focus on semantic HTML, keyboard navigation, visible focus states, sufficient color contrast, descriptive labels, and screen-reader support. I also test across browsers and respect reduced-motion preferences."
+  },
+  {
+    "id": "css-architecture",
+    "category": "UI Development",
+    "question": "How do you organize CSS in a large application?",
+    "answer": "I organize CSS around reusable components and consistent naming conventions. Depending on the project, I use CSS Modules, Sass, styled components, or utility-first CSS. I prefer shared design tokens, avoid unnecessary specificity and duplication, and keep component styles isolated where appropriate."
+  },
+  {
+    "id": "react-experience",
+    "category": "React.js",
+    "question": "What is your experience with React?",
+    "answer": "I have 4+ years of hands-on experience developing responsive frontend applications with React, JavaScript, and TypeScript. My experience includes functional components, React Hooks, reusable component architecture, state management, routing, REST API integration, forms, debugging, and performance optimization. I focus on building scalable and maintainable applications."
+  },
+  {
+    "id": "react-virtual-dom",
+    "category": "React.js",
+    "question": "What is the Virtual DOM and reconciliation in React?",
+    "answer": "The Virtual DOM is an in-memory representation of the UI. When component state or props change, React renders a new representation and reconciles it with the previous one to determine the necessary updates. React then commits the required changes to the actual DOM. Keys help React identify elements in lists and support efficient reconciliation."
+  },
+  {
+    "id": "react-hooks",
+    "category": "React.js",
+    "question": "What are React Hooks, and which hooks have you used?",
+    "answer": "React Hooks allow functional components to use state and other React features. I use useState for local state, useEffect to synchronize with external systems, useContext for shared values, useRef for persistent mutable references, and useMemo and useCallback when memoization provides a performance benefit. I also use useReducer for more complex state logic."
+  },
+  {
+    "id": "react-useeffect",
+    "category": "React.js",
+    "question": "How does useEffect work, and what is the dependency array?",
+    "answer": "useEffect is used to synchronize a component with external systems such as subscriptions, browser APIs, or network connections. Its dependency array determines when the effect should re-run. With no dependency array, it runs after every commit. With an empty array, it runs after the initial mount, with development Strict Mode considerations. With dependencies, it re-runs when their values change. I also use cleanup functions to remove subscriptions, timers, and event listeners."
+  },
+  {
+    "id": "react-usememo-usecallback",
+    "category": "React.js",
+    "question": "What is the difference between useMemo and useCallback?",
+    "answer": "useMemo memoizes the result of a calculation, while useCallback memoizes a function reference. Both can help avoid unnecessary work or re-renders in specific situations. I use them when profiling shows a meaningful benefit or when stable references are required by memoized child components or dependencies."
+  },
+  {
+    "id": "react-performance",
+    "category": "React.js",
+    "question": "How do you optimize React application performance?",
+    "answer": "I start by identifying bottlenecks using React DevTools and browser profiling. I optimize component boundaries, prevent unnecessary re-renders, use memoization when appropriate, implement lazy loading and code splitting, optimize assets, and use virtualization for large lists when needed. I also review API requests, bundle size, and expensive calculations."
+  },
+  {
+    "id": "react-state-management",
+    "category": "React.js",
+    "question": "How do you manage state in React applications?",
+    "answer": "I choose state management based on application complexity. I use useState and useReducer for local state, Context API for suitable shared state, and libraries such as Redux Toolkit or Zustand when more structured global state management is required. For server state, I consider tools such as TanStack Query to manage fetching, caching, and synchronization."
+  },
+  {
+    "id": "react-server-components",
+    "category": "React.js",
+    "question": "What are React Server Components?",
+    "answer": "React Server Components allow components to render on the server without shipping their component implementation to the client. They can access server-side resources and help reduce client-side JavaScript. Client Components are used when interactive behavior, browser APIs, or client-side state and event handlers are needed. In frameworks that support them, I choose the appropriate component type based on the feature requirements."
+  },
+  {
+    "id": "nextjs-rendering",
+    "category": "Next.js",
+    "question": "What is the difference between SSR, SSG, and ISR?",
+    "answer": "Server-Side Rendering generates HTML on the server for a request. Static Site Generation generates pages during the build process. Incremental Static Regeneration allows static pages to be regenerated after deployment based on configured revalidation. I choose the rendering approach based on data freshness, SEO requirements, personalization, and performance."
+  },
+  {
+    "id": "nodejs-experience",
+    "category": "Node.js",
+    "question": "What is Node.js, and why do you use it?",
+    "answer": "Node.js is a JavaScript runtime built on the V8 engine that allows JavaScript to run outside the browser. I use it for backend development, REST APIs, business logic, integrations, and server-side services. Its event-driven, non-blocking I/O model makes it suitable for applications handling many concurrent I/O operations."
+  },
+  {
+    "id": "nodejs-event-loop",
+    "category": "Node.js",
+    "question": "Can you explain the Node.js event loop?",
+    "answer": "The Node.js event loop coordinates asynchronous operations without blocking the main JavaScript execution thread. Node.js delegates certain I/O operations to the operating system or libuv thread pool and processes their callbacks when they are ready. Its phases include timers, pending callbacks, poll, check, and close callbacks. Understanding this behavior helps me build efficient asynchronous services."
+  },
+  {
+    "id": "express-middleware",
+    "category": "Node.js",
+    "question": "What is middleware in Express.js?",
+    "answer": "Middleware functions execute during the request-response lifecycle. They can access request and response objects, execute logic, and pass control using next(). I use middleware for authentication, authorization, validation, logging, request processing, and centralized error handling. Middleware order is important because it affects request execution."
+  },
+  {
+    "id": "nodejs-streams",
+    "category": "Node.js",
+    "question": "What are streams in Node.js?",
+    "answer": "Streams allow data to be processed incrementally instead of loading the entire dataset into memory. Node.js provides readable, writable, duplex, and transform streams. I use streams for large file processing, data transfers, and pipelines. Backpressure helps prevent a fast producer from overwhelming a slower consumer."
+  },
+  {
+    "id": "nodejs-worker-threads",
+    "category": "Node.js",
+    "question": "How do you handle CPU-intensive tasks in Node.js?",
+    "answer": "CPU-intensive tasks can block the event loop and delay other requests. I consider Worker Threads for parallel JavaScript computation, separate background workers for asynchronous jobs, or dedicated services for more complex workloads. I also consider queues, batching, and monitoring to keep the main application responsive."
+  },
+  {
+    "id": "rest-api",
+    "category": "API Development",
+    "question": "How do you design and build REST APIs?",
+    "answer": "I begin by identifying business requirements and defining resource-based endpoints. I use appropriate HTTP methods and status codes, validate incoming requests, separate business logic from routing, and implement consistent error handling. I also consider authentication, authorization, pagination, filtering, rate limiting, logging, documentation, and automated testing."
+  },
+  {
+    "id": "authentication-authorization",
+    "category": "API Development",
+    "question": "What is the difference between authentication and authorization?",
+    "answer": "Authentication verifies who a user is, while authorization determines what that authenticated user is allowed to access. I implement authentication using suitable approaches such as secure sessions or tokens, and authorization through roles, permissions, and access-control rules. I validate permissions on the server rather than relying only on frontend restrictions."
+  },
+  {
+    "id": "database-sql-nosql",
+    "category": "Database",
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "answer": "SQL databases use structured relational schemas and support relationships, joins, and transactions. NoSQL databases support models such as document, key-value, column-family, and graph storage. I choose SQL when relational integrity and structured querying are important, and NoSQL when flexible document structures or specific access patterns make it appropriate."
+  },
+  {
+    "id": "database-indexing",
+    "category": "Database",
+    "question": "What is database indexing, and why is it important?",
+    "answer": "An index is a data structure that helps a database locate records more efficiently without scanning every row. Indexes can significantly improve query performance, especially for frequently filtered or joined columns. However, they require additional storage and can increase the cost of insert, update, and delete operations. I create indexes based on actual query patterns and execution plans."
+  },
+  {
+    "id": "redis-caching",
+    "category": "Database",
+    "question": "What is Redis, and when would you use it?",
+    "answer": "Redis is an in-memory data store commonly used for caching, session storage, rate limiting, and real-time data structures. It can reduce repeated database queries and improve response times. I consider expiration policies, cache invalidation, consistency, and memory limits when implementing caching."
+  },
+  {
+    "id": "system-design",
+    "category": "System Design",
+    "question": "How would you design a scalable web application?",
+    "answer": "I start by understanding functional and non-functional requirements, expected traffic, availability, and data needs. I define the frontend, backend, API, and database architecture. I consider load balancing, caching, database indexing, background processing, horizontal scaling, security, observability, and failure recovery. I prefer starting with a simple architecture and introducing complexity as requirements grow."
+  },
+  {
+    "id": "microservices",
+    "category": "System Design",
+    "question": "What are microservices, and when would you use them?",
+    "answer": "Microservices architecture divides an application into independently deployable services organized around business capabilities. Each service can own its logic and data boundaries. This can improve independent scaling and team autonomy, but introduces network communication, distributed transactions, monitoring, and operational complexity. I choose microservices when the system's scale and organizational needs justify that complexity."
+  },
+  {
+    "id": "websockets",
+    "category": "System Design",
+    "question": "What are WebSockets, and when would you use them?",
+    "answer": "WebSockets provide a persistent, bidirectional communication channel between a client and server. They are useful for real-time applications such as chat, notifications, collaborative interfaces, and live dashboards. I consider connection management, authentication, reconnection, message validation, and scaling when implementing WebSocket-based systems."
+  },
+  {
+    "id": "agentic-ai",
+    "category": "Agentic AI",
+    "question": "What is Agentic AI, and how is it different from traditional generative AI?",
+    "answer": "Traditional generative AI primarily responds to prompts by generating content. Agentic AI extends this capability by allowing systems to plan tasks, select tools, execute actions, observe results, and continue working toward a goal. Agents can interact with APIs, databases, and external services. I focus on building useful workflows with clear permissions, validation, and controlled execution."
+  },
+  {
+    "id": "ai-agent-architecture",
+    "category": "Agentic AI",
+    "question": "How would you design an AI agent from scratch?",
+    "answer": "I begin by defining the business problem, the agent's responsibilities, and its execution boundaries. Then I select an appropriate LLM, define system instructions, create tools with clear input and output schemas, and implement the orchestration layer. Depending on the use case, I add memory, RAG, validation, permissions, human approval, logging, and evaluation. Finally, I test realistic scenarios and monitor accuracy, reliability, latency, and cost."
+  },
+  {
+    "id": "rag",
+    "category": "Agentic AI",
+    "question": "What is RAG, and how does it work?",
+    "answer": "Retrieval-Augmented Generation combines information retrieval with language model generation. A typical pipeline includes document ingestion, chunking, embedding generation, vector storage, retrieval, optional reranking, and response generation. Relevant retrieved content is supplied to the LLM as context. RAG helps generate answers grounded in external or organization-specific information."
+  },
+  {
+    "id": "rag-vs-finetuning",
+    "category": "Agentic AI",
+    "question": "What is the difference between RAG and fine-tuning?",
+    "answer": "RAG retrieves relevant external information and provides it as context during generation. Fine-tuning updates model parameters using additional training data to influence model behavior. I prefer RAG when the application needs access to frequently changing or private knowledge. Fine-tuning is useful when specific behavior, style, or task patterns need to be learned. They can also be combined."
+  },
+  {
+    "id": "vector-database",
+    "category": "Agentic AI",
+    "question": "What is a vector database?",
+    "answer": "A vector database stores numerical embeddings representing semantic information such as text, images, or other data. It supports similarity searches to retrieve content that is semantically related to a query. I use vector databases in RAG applications, semantic search, and recommendation workflows. Examples include Pinecone, Weaviate, Qdrant, and Chroma."
+  },
+  {
+    "id": "embeddings",
+    "category": "Agentic AI",
+    "question": "What are embeddings in AI?",
+    "answer": "Embeddings are numerical vector representations of data that capture semantic or contextual relationships. Similar concepts tend to have vectors that are close in the embedding space according to a similarity measure. They are used for semantic search, document retrieval, clustering, and recommendation systems. In RAG, embeddings help retrieve relevant document chunks."
+  },
+  {
+    "id": "tool-calling",
+    "category": "Agentic AI",
+    "question": "What is tool calling in AI agents?",
+    "answer": "Tool calling allows an AI model to request execution of predefined functions or external services. An agent might call a search API, query a database, retrieve customer information, or create a task. The application validates the tool request and arguments, executes the operation, and returns the result to the model. I include permissions, validation, error handling, and execution limits."
+  },
+  {
+    "id": "mcp",
+    "category": "Agentic AI",
+    "question": "What is Model Context Protocol (MCP)?",
+    "answer": "MCP is an open protocol that standardizes how AI applications connect to external tools and data sources. It defines a consistent way for compatible clients and servers to expose tools, resources, and prompts. I consider authentication, authorization, trusted servers, input validation, and security boundaries when integrating MCP into agentic workflows."
+  },
+  {
+    "id": "langchain",
+    "category": "Agentic AI",
+    "question": "What is LangChain, and why is it useful?",
+    "answer": "LangChain is a framework for building applications powered by language models. It provides abstractions for model integrations, prompts, tools, retrieval, and application workflows. I would use it when I need reusable integrations and a structured way to connect LLMs with data sources and external tools."
+  },
+  {
+    "id": "langgraph",
+    "category": "Agentic AI",
+    "question": "What is LangGraph, and how is it different from LangChain?",
+    "answer": "LangGraph is a framework for building stateful, graph-based AI workflows and agents. It represents workflows through nodes and edges, supporting conditional routing, cycles, state management, and human-in-the-loop execution. LangChain provides broader LLM application abstractions, while LangGraph is particularly useful for controlling complex multi-step agent workflows."
+  },
+  {
+    "id": "multi-agent",
+    "category": "Agentic AI",
+    "question": "What is the difference between single-agent and multi-agent architecture?",
+    "answer": "A single-agent system uses one agent to understand a task, select tools, and execute the workflow. A multi-agent system distributes responsibilities among specialized agents, such as research, planning, execution, and validation. Multi-agent systems can help with complex workflows but introduce coordination, latency, cost, and communication challenges. I start with a single agent and introduce multiple agents when there is a clear benefit."
+  },
+  {
+    "id": "agent-memory",
+    "category": "Agentic AI",
+    "question": "How do AI agents use memory?",
+    "answer": "AI agents use memory to maintain useful information across interactions and execution steps. Short-term memory stores current task or conversation context, while long-term memory stores information that may be useful in future interactions. Memory can use structured databases, conversation history, or vector databases. I design memory around relevance, privacy, retention, and retrieval quality."
+  },
+  {
+    "id": "ai-hallucination",
+    "category": "Agentic AI",
+    "question": "How do you reduce hallucinations in AI applications?",
+    "answer": "I reduce hallucinations by providing relevant context through RAG, writing clear instructions, using structured output schemas, validating responses, and restricting unsupported actions. I also use source attribution where appropriate, confidence checks, and human review for important decisions. I evaluate responses against known test cases and monitor failure patterns to improve reliability."
+  },
+  {
+    "id": "ai-prompt-injection",
+    "category": "Agentic AI",
+    "question": "What is prompt injection, and how do you protect AI agents against it?",
+    "answer": "Prompt injection occurs when untrusted input attempts to override instructions or manipulate an AI system into performing unintended actions. I treat retrieved documents, user content, and tool outputs as untrusted data. I use least-privilege tool access, server-side permission checks, strict input validation, output validation, and human approval for sensitive actions. I never rely on prompts alone as a security boundary."
+  },
+  {
+    "id": "ai-evaluation",
+    "category": "Agentic AI",
+    "question": "How do you evaluate an AI agent?",
+    "answer": "I evaluate AI agents using representative test scenarios and measurable outcomes. I check task completion, answer accuracy, tool selection, argument correctness, failure recovery, and adherence to permissions. I also measure latency, token consumption, and cost. For complex agents, I evaluate the entire execution trajectory rather than only the final response."
+  },
+  {
+    "id": "ai-human-in-loop",
+    "category": "Agentic AI",
+    "question": "What is human-in-the-loop in Agentic AI?",
+    "answer": "Human-in-the-loop means involving a person in an AI workflow when supervision, approval, or judgment is required. I use it for sensitive, irreversible, high-impact, or externally visible actions. The agent presents the proposed action, waits for explicit approval, and continues only after authorization. This improves accountability and helps control autonomous execution."
+  },
+  {
+    "id": "ai-cost-optimization",
+    "category": "Agentic AI",
+    "question": "How do you optimize LLM cost and latency?",
+    "answer": "I optimize LLM cost and latency by selecting models based on task complexity, limiting unnecessary context, reducing redundant calls, using caching where appropriate, and optimizing retrieval. I also use asynchronous processing for suitable tasks, monitor token usage, and measure performance across workflows. I balance cost reduction with answer quality and reliability."
+  },
+  {
+    "id": "docker",
+    "category": "Cloud & DevOps",
+    "question": "What is Docker, and why is it useful?",
+    "answer": "Docker is a platform for packaging applications and their dependencies into containers. Containers provide consistent environments across development, testing, and deployment. I use Docker to simplify application setup, reduce environment-related issues, and support repeatable deployments. I also consider image size, security, environment configuration, and resource limits."
+  },
+  {
+    "id": "cicd",
+    "category": "Cloud & DevOps",
+    "question": "What is CI/CD?",
+    "answer": "Continuous Integration involves regularly integrating code changes and automatically running checks such as tests and builds. Continuous Delivery or Deployment automates the process of preparing or releasing validated changes. CI/CD pipelines improve consistency and reduce manual deployment effort. I consider testing, environment management, approvals, rollback strategies, and deployment monitoring."
+  },
+  {
+    "id": "testing",
+    "category": "Testing",
+    "question": "How do you test React applications?",
+    "answer": "I use unit and component tests to validate individual pieces of functionality, integration tests to verify interactions between components and services, and end-to-end tests to validate complete user journeys. Tools I consider include Jest, Vitest, React Testing Library, and Playwright. I focus on testing user-visible behavior, important edge cases, accessibility, and error states."
+  },
+  {
+    "id": "api-testing",
+    "category": "Testing",
+    "question": "How do you test backend APIs?",
+    "answer": "I test backend APIs using tools such as Postman and automated testing frameworks. I validate successful responses, status codes, request validation, authentication, authorization, error handling, and edge cases. I also test database interactions and external integrations. I include integration and automated regression tests to ensure changes do not break existing functionality."
+  },
+  {
+    "id": "production-debugging",
+    "category": "Real-World Scenarios",
+    "question": "How do you investigate and resolve a production issue?",
+    "answer": "I first understand the impact and reproduce the issue when possible. I inspect logs, error traces, monitoring data, and recent deployments to narrow down the root cause. I prioritize restoring service safely, implement and test a fix, and monitor the application after deployment. I also document the root cause and identify preventive improvements."
+  },
+  {
+    "id": "performance-scenario",
+    "category": "Real-World Scenarios",
+    "question": "How would you improve the performance of a slow web application?",
+    "answer": "I begin by measuring performance using browser developer tools, Lighthouse, and application monitoring. I inspect network requests, JavaScript bundle size, rendering behavior, images, API latency, and database queries. Depending on the findings, I optimize assets, implement code splitting, reduce unnecessary rendering, introduce caching, improve database queries, and apply lazy loading. I compare performance metrics before and after changes."
+  },
+  {
+    "id": "collaboration",
+    "category": "Teamwork",
+    "question": "How do you collaborate with designers, developers, and stakeholders?",
+    "answer": "I clarify user needs and technical requirements early, share implementation constraints with design and product teams, and maintain open communication throughout delivery. I participate in Agile and Scrum ceremonies, design reviews, code reviews, and knowledge sharing. I explain trade-offs in terms of usability, technical feasibility, performance, delivery timelines, and maintainability."
+  },
+  {
+    "id": "problem-solving",
+    "category": "Teamwork",
+    "question": "How do you approach solving a complex technical or design problem?",
+    "answer": "I break the problem into smaller parts and identify the root cause before choosing a solution. I gather relevant information, evaluate possible approaches, and consider user impact, technical complexity, and business priorities. I implement a practical solution, validate it through testing or feedback, and document important decisions."
+  },
+  {
+    "id": "ai-in-workflow",
+    "category": "Growth",
+    "question": "How do you use AI tools in your daily development workflow?",
+    "answer": "I use AI tools to explore implementation approaches, understand unfamiliar code, assist with documentation, identify potential bugs, generate ideas, and automate repetitive tasks. I also experiment with AI-powered workflows and agentic automation. I review generated output, validate it against requirements, check security implications, and test implementations before using them in production."
+  },
+  {
+    "id": "continuous-learning",
+    "category": "Growth",
+    "question": "How do you keep yourself updated with emerging technologies?",
+    "answer": "I regularly explore official documentation, developer communities, technical articles, open-source projects, and practical tutorials. I experiment with frontend technologies, backend architecture, and AI capabilities through prototypes and practical projects. I focus on understanding how new technologies can improve product quality, developer productivity, and business outcomes."
+  }
+]
